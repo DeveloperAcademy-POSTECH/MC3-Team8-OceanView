@@ -1,6 +1,6 @@
 <img src="https://user-images.githubusercontent.com/20789760/251170328-d7fafba2-dcd3-4278-a50a-c255997e4584.jpeg"/>
 <h3 align="center">(Hotel room)Ocean View: 여름의연애</h3>
-<p align="center">summer is for falling in love</p>
+<p align="center">사과들의 연애를 앱스토어에서 만나보세요</p>
 
 <div style="display: flex; flex-direction: column;" align="center" >
   <a href="https://www.apple.com/kr/store">
