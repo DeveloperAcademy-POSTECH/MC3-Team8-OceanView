@@ -1,4 +1,4 @@
-<img src="[https://user-images.githubusercontent.com/20789760/235415279-c25c2152-0435-47ac-985d-b05d89a113ea.png](https://i0.wp.com/www.techjunkie.com/wp-content/uploads/2019/04/What-to-do-if-Tinder-keeps-crashing-on-iPhone2.jpg?resize=600%2C403&ssl=1)"/>
+<img src="https://user-images.githubusercontent.com/20789760/251170328-d7fafba2-dcd3-4278-a50a-c255997e4584.jpeg"/>
 <h3 align="center">(Hotel room)Ocean View: 여름의연애</h3>
 <p align="center">summer is for falling in love</p>
 
@@ -58,7 +58,7 @@
 <h2>👨‍🎨 Authors</h2>
 
 |[Ocean / 최수현](https://github.com)|[Luna / 박보경](https://github.com)|[Kiwi / 송기원](https://github.com)|[D.goggins / 성훈용](https://github.com)|[Heemoo / 문서희](https://github.com)|[Puppy / 최영재](https://github.com)|
-|:---:|:---:|:---:|:---:|:---:||:---:|
+|:---:|:---:|:---:|:---:|:---:|:---:|
 | <img width=200px src="https://user-images.githubusercontent.com/20789760/251167485-d16dfcc5-7c68-49d5-8df7-88a758d82f51.jpeg"/> | <img width=200px src="https://user-images.githubusercontent.com/20789760/251167508-36f8efcd-dd3e-41ac-87d3-a9765a1e40b4.png"/> | <img width=200px src="https://user-images.githubusercontent.com/20789760/251167554-ddad6d46-eed5-44ec-a70a-d94a020da15f.jpeg"/> | <img width=200px src="https://user-images.githubusercontent.com/20789760/251167578-2df25fd9-9819-4eed-a1fb-4145470fa653.JPG"/> | <img width=200px src="https://user-images.githubusercontent.com/20789760/251167565-d927b638-0692-476b-aca5-b858bd3b8b88.png"/> | <img width=200px src="https://user-images.githubusercontent.com/20789760/251167592-a9d4a0a6-395b-4cc7-a98b-eb7e8510b92f.png"/> |  
 |<center>iOS Lead Developer</center>|<center>iOS Lead Developer</center>|<center>iOS Lead Developer</center>|<center>iOS Lead Developer</center>|<center>iOS Lead Developer</center>|
 
