@@ -1,4 +1,4 @@
-<img src="https://user-images.githubusercontent.com/20789760/251170328-d7fafba2-dcd3-4278-a50a-c255997e4584.jpeg"/>
+<img src="https://github.com/ApplePod/SwiftUI_complete/assets/20789760/82809541-456d-4c7a-b999-ce9dbae369af"/>
 <h3 align="center">(Hotel room)Ocean View: 여름의연애</h3>
 <p align="center">사과들의 연애를 앱스토어에서 만나보세요</p>
 
