@@ -171,6 +171,7 @@
 		3E4C1DA32A677405007BAF21 /* ChatViewBuilderViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4C1DA22A677405007BAF21 /* ChatViewBuilderViewBuilder.swift */; };
 		3E4C1DA52A677A6F007BAF21 /* GroupChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4C1DA42A677A6F007BAF21 /* GroupChatView.swift */; };
 		3E4C1DA72A67AE40007BAF21 /* ChatBalloonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4C1DA62A67AE40007BAF21 /* ChatBalloonView.swift */; };
+		3E4C1DA92A67DBB5007BAF21 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4C1DA82A67DBB5007BAF21 /* SwiftUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -339,6 +340,7 @@
 		3E4C1DA22A677405007BAF21 /* ChatViewBuilderViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewBuilderViewBuilder.swift; sourceTree = "<group>"; };
 		3E4C1DA42A677A6F007BAF21 /* GroupChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupChatView.swift; sourceTree = "<group>"; };
 		3E4C1DA62A67AE40007BAF21 /* ChatBalloonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBalloonView.swift; sourceTree = "<group>"; };
+		3E4C1DA82A67DBB5007BAF21 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -448,6 +450,7 @@
 				3E4C1C5E2A676B57007BAF21 /* ChatListView.swift */,
 				3E4C1DA42A677A6F007BAF21 /* GroupChatView.swift */,
 				3E4C1DA62A67AE40007BAF21 /* ChatBalloonView.swift */,
+				3E4C1DA82A67DBB5007BAF21 /* SwiftUIView.swift */,
 			);
 			path = Chatting;
 			sourceTree = "<group>";
@@ -957,6 +960,7 @@
 			files = (
 				3E4C1C462A66E8FB007BAF21 /* ContentView.swift in Sources */,
 				3E4C1C5F2A676B57007BAF21 /* ChatListView.swift in Sources */,
+				3E4C1DA92A67DBB5007BAF21 /* SwiftUIView.swift in Sources */,
 				3E4C1DA72A67AE40007BAF21 /* ChatBalloonView.swift in Sources */,
 				3E4C1DA32A677405007BAF21 /* ChatViewBuilderViewBuilder.swift in Sources */,
 				3E4C1C5A2A66F782007BAF21 /* HomeView.swift in Sources */,
