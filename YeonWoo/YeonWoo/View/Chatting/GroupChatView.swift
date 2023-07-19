@@ -10,6 +10,7 @@ import SwiftUI
 struct GroupChatView: View {
     @State var message: String = ""
     @State var missionTitle: String = "영일대에서 정장입고 수영하기"
+    
     var body: some View {
         ZStack {
             Color("Main02").ignoresSafeArea()
@@ -37,12 +38,15 @@ struct GroupChatView: View {
                         Text("새로운 우연과 미션을 수행해주세요")
                             .font(Font.custom("Pretendard-Bold", size: 13))
                             .foregroundColor(Color("Main01"))
+                        
+                        ChatYourBalloonView()
+                        ChatMyBalloonView()
+                        ChatYourBalloonView()
+                        ChatMyBalloonView()
+                        ChatYourBalloonView()
+                        ChatMyBalloonView()
                     }
-                    
-                    // 상대방일때
-                    
                 }
-                
                 Spacer()
                 HStack (spacing: 0){
                     roundedInfinityWidthBox(boxHeight: 40, boxBackgroundColor: "GrayScale10") {
