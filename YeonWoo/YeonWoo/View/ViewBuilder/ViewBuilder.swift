@@ -130,6 +130,4 @@ func roundedFixedSizeImageBox<Content: View>
                     content()
                 }
         )
-    //.padding(.horizontal, 16)
-    //.padding(.vertical, 10)
 }

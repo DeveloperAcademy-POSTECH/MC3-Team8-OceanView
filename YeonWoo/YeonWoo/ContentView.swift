@@ -25,7 +25,7 @@ struct ContentView: View {
                 }
                 .tag(1)
             
-            HomeView()
+            MissionCertificationView()
                 .tabItem {
                     Image(systemName: "heart")
                     Text("미션게시판")

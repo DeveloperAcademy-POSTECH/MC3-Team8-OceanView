@@ -1,5 +1,5 @@
 //
-//  OthersMissionView.swift
+//  MissionCardView.swift
 //  YeonWoo
 //
 //  Created by Bokyung on 2023/07/19.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct OthersMissionView: View {
+struct MissionCardView: View {
     @Binding var missionTitle: String
     @Binding var missionDate: String
     @Binding var agreeNumber: Int
@@ -54,8 +54,8 @@ struct OthersMissionView: View {
     }
 }
 
-struct OthersMissionView_Previews: PreviewProvider {
+struct MissionCardView_Previews: PreviewProvider {
     static var previews: some View {
-        OthersMissionView(missionTitle: .constant("길에서 누워서 사진찍기"), missionDate: .constant("2023.05.05"), agreeNumber: .constant(1234))
+        MissionCardView(missionTitle: .constant("길에서 누워서 사진찍기"), missionDate: .constant("2023.05.05"), agreeNumber: .constant(1234))
     }
 }
