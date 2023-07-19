@@ -15,16 +15,13 @@ struct SplashView: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(maxWidth: .infinity)
                 .ignoresSafeArea()
-            
-            Button {
-                
-            } label: {
-                Text("시작하기")
-                    .foregroundColor(<#T##color: Color?##Color?#>)
-            } // Button
-            
         } // ZStack
         
+        //
+        // 1. 디자인 시스템이 정의가 되었지
+        // 2. 폰트 뭔지 궁금
+        // 3. MVVM MVC 논의
+        // 4. Hi-Fi fix된거부터 순차적으로 작업할 예정!
     }
 }
 
