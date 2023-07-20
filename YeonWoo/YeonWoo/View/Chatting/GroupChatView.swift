@@ -41,12 +41,11 @@ struct GroupChatView: View {
                             .font(Font.custom("Pretendard-Bold", size: 13))
                             .foregroundColor(Color("Main01"))
                         
-                        ChatYourBalloonView()
-                        ChatMyBalloonView()
-                        ChatYourBalloonView()
-                        ChatMyBalloonView()
-                        ChatYourBalloonView()
-                        ChatMyBalloonView()
+                        ChatBubbleView(isMyChat: false)
+                        ChatBubbleView(isMyChat: true)
+                        ChatBubbleView(isMyChat: false)
+                        ChatBubbleView(isMyChat: true)
+                        ChatBubbleView(isMyChat: false)
                     } // VStack
                 } // ScrollView
                 
@@ -64,7 +63,7 @@ struct GroupChatView: View {
                         Button {
                             // action
                         } label: {
-                            Text("💌")
+                            Text(Image("IconSendMessage"))
                         }
                     }
                     .padding(.trailing, 16)

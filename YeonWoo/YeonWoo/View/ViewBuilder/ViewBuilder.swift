@@ -76,6 +76,7 @@ func chatBubble
                 .foregroundColor(Color("GrayScale01"))
                 .font(.system(size: 14))
                 .lineLimit(20)
+                .padding(.bottom, 2)
             HStack (spacing: 0){
                 Spacer()
                 Text(textTime)
@@ -86,6 +87,7 @@ func chatBubble
     }
 }
 
+// 채팅방의 버블 - 채팅방의 버블의 그림자를 주는 효과
 @ViewBuilder
 func copyChatBoxView<Content: View>
 (content: () -> Content) -> some View {
@@ -111,8 +113,6 @@ func copyChatBoxView<Content: View>
             .frame(width: UIScreen.main.bounds.width*0.67)
     }
 }
-
-
 
 
 
