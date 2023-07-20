@@ -46,8 +46,7 @@ struct UploadPhotoView: View {
                 Spacer()
             } // VStack
             .padding(.horizontal, 20)
-        }
-        
+        } // ZStack
     }
     
     func uploadPhoto() {
