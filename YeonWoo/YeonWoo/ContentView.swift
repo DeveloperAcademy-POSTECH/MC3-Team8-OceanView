@@ -32,7 +32,7 @@ struct ContentView: View {
                 }
                 .tag(2)
             
-            HomeView()
+            SendHeartView()
                 .tabItem {
                     Image(systemName: "heart")
                     Text("하트")

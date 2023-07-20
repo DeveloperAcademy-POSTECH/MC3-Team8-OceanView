@@ -176,6 +176,7 @@
 		3EECA2F72A68C42F00973755 /* MissionCertificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EECA2F62A68C42F00973755 /* MissionCertificationView.swift */; };
 		3EECA2F92A68C45300973755 /* ShowOtherMissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EECA2F82A68C45300973755 /* ShowOtherMissionView.swift */; };
 		3EECA2FB2A68C46800973755 /* UploadPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EECA2FA2A68C46800973755 /* UploadPhotoView.swift */; };
+		3EECA2FD2A68C7E100973755 /* SendHeartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EECA2FC2A68C7E100973755 /* SendHeartView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -349,6 +350,7 @@
 		3EECA2F62A68C42F00973755 /* MissionCertificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionCertificationView.swift; sourceTree = "<group>"; };
 		3EECA2F82A68C45300973755 /* ShowOtherMissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowOtherMissionView.swift; sourceTree = "<group>"; };
 		3EECA2FA2A68C46800973755 /* UploadPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPhotoView.swift; sourceTree = "<group>"; };
+		3EECA2FC2A68C7E100973755 /* SendHeartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendHeartView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -466,6 +468,7 @@
 		3E4C1C5D2A66F8B4007BAF21 /* Heart */ = {
 			isa = PBXGroup;
 			children = (
+				3EECA2FC2A68C7E100973755 /* SendHeartView.swift */,
 			);
 			path = Heart;
 			sourceTree = "<group>";
@@ -981,6 +984,7 @@
 				3E4C1C462A66E8FB007BAF21 /* ContentView.swift in Sources */,
 				3EECA2F92A68C45300973755 /* ShowOtherMissionView.swift in Sources */,
 				3EECA2FB2A68C46800973755 /* UploadPhotoView.swift in Sources */,
+				3EECA2FD2A68C7E100973755 /* SendHeartView.swift in Sources */,
 				3E4C1C5F2A676B57007BAF21 /* ChatListView.swift in Sources */,
 				3E4C1DA92A67DBB5007BAF21 /* SwiftUIView.swift in Sources */,
 				3E4C1DA72A67AE40007BAF21 /* ChatBalloonView.swift in Sources */,
