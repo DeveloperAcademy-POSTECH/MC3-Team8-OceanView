@@ -51,14 +51,15 @@ struct MissionCertificationView: View {
                     } // 위아래 ScrollView
                 } // VStack
                 
-                Button {
-                    // action
+                
+                NavigationLink {
+                    UploadPhotoView()
                 } label: {
                     makeShadowEffectCircle(ciecleSize: 56) {
                         Image("IconPlusButton")
                     }
                 }
-                .position(x: UIScreen.main.bounds.width * 0.9, y: UIScreen.main.bounds.height * 0.75)
+                .position(x: UIScreen.main.bounds.width * 0.9, y: UIScreen.main.bounds.height * 0.78)
                 
             } // ZStack
         } // NavigationView
