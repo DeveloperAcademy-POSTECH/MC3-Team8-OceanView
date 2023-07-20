@@ -168,10 +168,15 @@
 		3E4C1D9F2A676F14007BAF21 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3E4C1D052A676F14007BAF21 /* Pretendard-ExtraLight.otf */; };
 		3E4C1DA02A676F14007BAF21 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3E4C1D062A676F14007BAF21 /* Pretendard-SemiBold.otf */; };
 		3E4C1DA12A676F14007BAF21 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3E4C1D072A676F14007BAF21 /* LICENSE.txt */; };
-		3E4C1DA32A677405007BAF21 /* ChatViewBuilderViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4C1DA22A677405007BAF21 /* ChatViewBuilderViewBuilder.swift */; };
+		3E4C1DA32A677405007BAF21 /* ViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4C1DA22A677405007BAF21 /* ViewBuilder.swift */; };
 		3E4C1DA52A677A6F007BAF21 /* GroupChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4C1DA42A677A6F007BAF21 /* GroupChatView.swift */; };
 		3E4C1DA72A67AE40007BAF21 /* ChatBalloonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4C1DA62A67AE40007BAF21 /* ChatBalloonView.swift */; };
 		3E4C1DA92A67DBB5007BAF21 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4C1DA82A67DBB5007BAF21 /* SwiftUIView.swift */; };
+		3EECA2F52A68C3B100973755 /* MissionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EECA2F42A68C3B100973755 /* MissionCardView.swift */; };
+		3EECA2F72A68C42F00973755 /* MissionCertificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EECA2F62A68C42F00973755 /* MissionCertificationView.swift */; };
+		3EECA2F92A68C45300973755 /* ShowOtherMissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EECA2F82A68C45300973755 /* ShowOtherMissionView.swift */; };
+		3EECA2FB2A68C46800973755 /* UploadPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EECA2FA2A68C46800973755 /* UploadPhotoView.swift */; };
+		3EECA2FD2A68C7E100973755 /* SendHeartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EECA2FC2A68C7E100973755 /* SendHeartView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -337,10 +342,15 @@
 		3E4C1D052A676F14007BAF21 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
 		3E4C1D062A676F14007BAF21 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		3E4C1D072A676F14007BAF21 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
-		3E4C1DA22A677405007BAF21 /* ChatViewBuilderViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewBuilderViewBuilder.swift; sourceTree = "<group>"; };
+		3E4C1DA22A677405007BAF21 /* ViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBuilder.swift; sourceTree = "<group>"; };
 		3E4C1DA42A677A6F007BAF21 /* GroupChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupChatView.swift; sourceTree = "<group>"; };
 		3E4C1DA62A67AE40007BAF21 /* ChatBalloonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBalloonView.swift; sourceTree = "<group>"; };
 		3E4C1DA82A67DBB5007BAF21 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		3EECA2F42A68C3B100973755 /* MissionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionCardView.swift; sourceTree = "<group>"; };
+		3EECA2F62A68C42F00973755 /* MissionCertificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionCertificationView.swift; sourceTree = "<group>"; };
+		3EECA2F82A68C45300973755 /* ShowOtherMissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowOtherMissionView.swift; sourceTree = "<group>"; };
+		3EECA2FA2A68C46800973755 /* UploadPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPhotoView.swift; sourceTree = "<group>"; };
+		3EECA2FC2A68C7E100973755 /* SendHeartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendHeartView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -403,11 +413,12 @@
 		3E4C1C522A66EB15007BAF21 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3EECA2E82A67F75600973755 /* ViewBuilder */,
 				3E4C1C542A66EB3A007BAF21 /* Splash */,
 				3E4C1C582A66F71F007BAF21 /* Login */,
 				3E4C1C572A66F6FC007BAF21 /* Home */,
 				3E4C1C5B2A66F893007BAF21 /* Chatting */,
-				3E4C1C5C2A66F8AB007BAF21 /* Mission */,
+				3EECA2F32A68C2C600973755 /* Mission */,
 				3E4C1C5D2A66F8B4007BAF21 /* Heart */,
 			);
 			path = View;
@@ -446,7 +457,6 @@
 		3E4C1C5B2A66F893007BAF21 /* Chatting */ = {
 			isa = PBXGroup;
 			children = (
-				3E4C1DA22A677405007BAF21 /* ChatViewBuilderViewBuilder.swift */,
 				3E4C1C5E2A676B57007BAF21 /* ChatListView.swift */,
 				3E4C1DA42A677A6F007BAF21 /* GroupChatView.swift */,
 				3E4C1DA62A67AE40007BAF21 /* ChatBalloonView.swift */,
@@ -455,16 +465,10 @@
 			path = Chatting;
 			sourceTree = "<group>";
 		};
-		3E4C1C5C2A66F8AB007BAF21 /* Mission */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Mission;
-			sourceTree = "<group>";
-		};
 		3E4C1C5D2A66F8B4007BAF21 /* Heart */ = {
 			isa = PBXGroup;
 			children = (
+				3EECA2FC2A68C7E100973755 /* SendHeartView.swift */,
 			);
 			path = Heart;
 			sourceTree = "<group>";
@@ -734,6 +738,25 @@
 			path = alternative;
 			sourceTree = "<group>";
 		};
+		3EECA2E82A67F75600973755 /* ViewBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				3E4C1DA22A677405007BAF21 /* ViewBuilder.swift */,
+			);
+			path = ViewBuilder;
+			sourceTree = "<group>";
+		};
+		3EECA2F32A68C2C600973755 /* Mission */ = {
+			isa = PBXGroup;
+			children = (
+				3EECA2F42A68C3B100973755 /* MissionCardView.swift */,
+				3EECA2F62A68C42F00973755 /* MissionCertificationView.swift */,
+				3EECA2F82A68C45300973755 /* ShowOtherMissionView.swift */,
+				3EECA2FA2A68C46800973755 /* UploadPhotoView.swift */,
+			);
+			path = Mission;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -959,14 +982,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E4C1C462A66E8FB007BAF21 /* ContentView.swift in Sources */,
+				3EECA2F92A68C45300973755 /* ShowOtherMissionView.swift in Sources */,
+				3EECA2FB2A68C46800973755 /* UploadPhotoView.swift in Sources */,
+				3EECA2FD2A68C7E100973755 /* SendHeartView.swift in Sources */,
 				3E4C1C5F2A676B57007BAF21 /* ChatListView.swift in Sources */,
 				3E4C1DA92A67DBB5007BAF21 /* SwiftUIView.swift in Sources */,
 				3E4C1DA72A67AE40007BAF21 /* ChatBalloonView.swift in Sources */,
-				3E4C1DA32A677405007BAF21 /* ChatViewBuilderViewBuilder.swift in Sources */,
+				3E4C1DA32A677405007BAF21 /* ViewBuilder.swift in Sources */,
 				3E4C1C5A2A66F782007BAF21 /* HomeView.swift in Sources */,
 				3E4C1DA52A677A6F007BAF21 /* GroupChatView.swift in Sources */,
 				3E4C1C442A66E8FB007BAF21 /* YeonWooApp.swift in Sources */,
+				3EECA2F52A68C3B100973755 /* MissionCardView.swift in Sources */,
 				3E4C1C562A66EB48007BAF21 /* SplashView.swift in Sources */,
+				3EECA2F72A68C42F00973755 /* MissionCertificationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

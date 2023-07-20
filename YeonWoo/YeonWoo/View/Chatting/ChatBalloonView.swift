@@ -124,8 +124,8 @@ struct ChatMyBalloonView: View {
                                     .onPreferenceChange(TextSizeKey.self) { textSize in
                                         DispatchQueue.main.async {
                                             self.textSize = textSize
-                                            print("width:", textSize.width)
-                                            print("height:", textSize.height)
+                                            // print("width:", textSize.width)
+                                            //print("height:", textSize.height)
                                         }
                                     }
                                 HStack {

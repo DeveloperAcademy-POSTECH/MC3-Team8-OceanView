@@ -85,8 +85,8 @@ func roundedInfinityWidthBox<Content: View>
                     content()
                 }
         )
-        //.padding(.horizontal, 16)
-        //.padding(.vertical, 10)
+    //.padding(.horizontal, 16)
+    //.padding(.vertical, 10)
 }
 
 
@@ -107,6 +107,27 @@ func roundedFixedSizeBox<Content: View>
                     content()
                 }
         )
-        //.padding(.horizontal, 16)
-        //.padding(.vertical, 10)
+    //.padding(.horizontal, 16)
+    //.padding(.vertical, 10)
+}
+
+
+// MARK: OthersMissionView
+@ViewBuilder
+func roundedFixedSizeImageBox<Content: View>
+(boxWidth: CGFloat, boxHeight: CGFloat, boxBackgroundImage: String, @ViewBuilder content: () -> Content) -> some View {
+    Rectangle()
+        .foregroundColor(.clear)
+        .frame(width: boxWidth, height: boxHeight)
+        .background(Color("GrayScale01"))
+        .cornerRadius(20)
+        .overlay(
+            Image(boxBackgroundImage)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(maxWidth: .infinity)
+                .overlay {
+                    content()
+                }
+        )
 }
