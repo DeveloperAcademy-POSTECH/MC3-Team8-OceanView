@@ -11,13 +11,13 @@ struct ChatListView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                //Color("Main02").ignoresSafeArea()
                 Image("ImgBackground")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(maxWidth: .infinity)
                     .ignoresSafeArea()
                 
+                // MARK: 화면 상단의 채팅방 헤더
                 VStack (spacing: 0){
                     HStack (spacing: 0){
                         VStack (alignment: .leading, spacing: 0){
@@ -29,10 +29,12 @@ struct ChatListView: View {
                                 .foregroundColor(Color("GrayScale01"))
                         } // VStack - Text
                         Spacer()
-                        Image("Imgprofile")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 64)
+                        makeShadowEffectCircle(ciecleSize: 64) {
+                            Image("Imgprofile")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(maxWidth: .infinity)
+                        }
                         
                     } // HStack
                     .padding(.horizontal, 16)
@@ -44,6 +46,8 @@ struct ChatListView: View {
                         .background(Color.black)
                         .foregroundColor(.black)
                     
+                    
+                    // MARK: 중앙~하단의 채팅방 리스트들
                     ScrollView {
                         ForEach(0..<10) { index in
                             // MARK: 각각의 NavigationLink를 좌측으로 Drag했을때 삭제할 수 있는 코드 필요
@@ -52,7 +56,7 @@ struct ChatListView: View {
                     } // ScrollView
                     .padding(.top, 16)
                 } // VStack
-            }
+            } // ZStack
         } // NavigationView
         .tint(.black)
         

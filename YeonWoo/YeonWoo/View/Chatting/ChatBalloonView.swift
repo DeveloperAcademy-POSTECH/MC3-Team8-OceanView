@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct ChatBubbleView: View {
+    // 채팅을 보낸 사람이 나인지 상대방인지 구분해줌
     var isMyChat: Bool
+    
     var body: some View {
         VStack (spacing: 0){
             // 나의 채팅이면
