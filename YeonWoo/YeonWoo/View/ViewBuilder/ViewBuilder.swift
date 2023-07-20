@@ -103,6 +103,28 @@ func roundedFixedSizeBox<Content: View>
 }
 
 
+// MARK: 이미지를 넣으면 shadow를 주는 View를 반환해줌
+@ViewBuilder
+func roundedFixedSizeImageBox
+(imgaeTitle: String,boxWidth: CGFloat, boxHeight: CGFloat) -> some View {
+    ZStack (alignment: .trailing){
+        Rectangle()
+            .frame(width: boxWidth, height: boxHeight)
+            .background(Color("GrayScale01"))
+            .cornerRadius(10)
+            .offset(x: 3, y: 3)
+        
+        Image(imgaeTitle)
+            .frame(width: boxWidth, height: boxHeight)
+            .cornerRadius(10)
+            .overlay(
+                RoundedRectangle(cornerRadius: 13)
+                    .stroke(Color.black, lineWidth: 4)
+            )
+    }
+}
+
+
 // MARK: ChatListView
 // 채팅방 리스트 - NavigationLink로 채팅방 연결
 @ViewBuilder
@@ -202,23 +224,3 @@ func copyChatBoxView<Content: View>
 
 
 // MARK: ShowOtherMissionView
-@ViewBuilder
-func roundedFixedSizeImageBox<Content: View>
-(boxWidth: CGFloat, boxHeight: CGFloat, boxBackgroundImage: String, @ViewBuilder content: () -> Content) -> some View {
-    Rectangle()
-        .foregroundColor(.clear)
-        .frame(width: boxWidth, height: boxHeight)
-        .background(Color("GrayScale01"))
-        .cornerRadius(20)
-        .overlay(
-            Image(boxBackgroundImage)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(maxWidth: .infinity)
-                .overlay {
-                    content()
-                }
-        )
-}
-
-
