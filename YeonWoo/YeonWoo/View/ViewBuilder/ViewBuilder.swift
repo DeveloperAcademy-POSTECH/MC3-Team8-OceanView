@@ -7,66 +7,58 @@
 
 import SwiftUI
 
-// MARK: ChatListView
-// 채팅방 리스트에서 NavigationLink
+// MARK: 모든 뷰에서 쓰임
+// MARK: Shadow를 주는 Box
+// content에 네모 안에 들어갈 것을 넣으면, shadow효과를 주는 View를 반환해줌
 @ViewBuilder
-func chatList
-(imageTitle: String, missionTitle: String, lastChat: String, timeInfo: String) -> some View {
-    RoundedRectangle(cornerRadius: 4)
-        .foregroundColor(.white)
-        .shadow(color: .black, radius: 1, x: 4, y: 4)
-        .frame(maxWidth: .infinity)
-        .frame(height: 72)
-        .overlay {
-            NavigationLink {
-                // destination
-                GroupChatView()
-            } label: {
-                RoundedRectangle(cornerRadius: 4)
-                    .stroke(.black, lineWidth: 1)
-                    .overlay {
-                        HStack (alignment: .top, spacing: 0) {
-                            Image(imageTitle)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(maxWidth: .infinity)
-                                .frame(width: 42)
-                                .clipShape(Circle())
-                                .overlay(Circle().stroke(.black, lineWidth: 2))
-                                .padding(.horizontal, 19)
-                            VStack (alignment: .leading,spacing: 0){
-                                Text(missionTitle)
-                                    .font(
-                                        Font.custom("Pretendard-Bold", size: 15)
-                                    )
-                                    .padding(.bottom, 5)
-                                
-                                Text(lastChat)
-                                    .lineLimit(1)
-                                    .foregroundColor(Color("GrayScale06"))
-                                    .font(
-                                        Font.custom("Pretendard-Medium", size: 12)
-                                    )
-                            } // VStack
-                            .padding(.leading, 3)
-                            Spacer()
-                            Text(timeInfo)
-                                .foregroundColor(Color("GrayScale07"))
-                                .font(
-                                    Font.custom("Pretendard-Medium", size: 10)
-                                )
-                                .padding(.horizontal, 15)
-                        }
-                    }
-            } // NavigationLink
-            
-        } // overlay
-        .padding(.horizontal, 16)
+func makeShadowEffectRoundedRectangle<Content: View>
+(content: () -> Content) -> some View {
+    ZStack (alignment: .trailing){
+        content()
+            .padding(16)
+            .frame(maxWidth: .infinity)
+            .background(Color("GrayScale01"))
+            .cornerRadius(4)
+            .shadow(color: Color(.sRGBLinear, white: 1, opacity: 0), radius: 0)
+            .offset(x: 3, y: 3)
+        
+        content()
+            .padding(16)
+            .frame(maxWidth: .infinity)
+            .background(Color("GrayScale10"))
+            .cornerRadius(4)
+            .overlay(
+                RoundedRectangle(cornerRadius: 13)
+                    .stroke(Color.black, lineWidth: 4)
+            )
+            .cornerRadius(10)
+            .shadow(color: Color(.sRGBLinear, white: 1, opacity: 0), radius: 0)
+    }
+}
+
+// content에 동그라미 안에 들어갈 것을 넣으면, shadow효과를 주는 View를 반환해줌
+@ViewBuilder
+func makeShadowEffectCircle<Content: View>
+(ciecleSize: CGFloat, content: () -> Content) -> some View {
+    ZStack (alignment: .trailing){
+        Circle()
+            .frame(width: ciecleSize)
+            .foregroundColor(Color.black)
+            .offset(x: 4, y: 4)
+        
+        content()
+            .overlay(
+                Circle()
+                    .stroke(Color.black, lineWidth: 6)
+            )
+            .cornerRadius(50)
+            .shadow(color: Color(.sRGBLinear, white: 1, opacity: 0), radius: 0)
+            .frame(width: ciecleSize)
+    }
 }
 
 
-
-// MARK: GroupChatView
+// MARK: Shadow가 없는 Box
 // box의 height를 조절할 수 있는 Box width는 infinity, content에는 Box안의 내용이 들어감
 @ViewBuilder
 func roundedInfinityWidthBox<Content: View>
@@ -88,7 +80,6 @@ func roundedInfinityWidthBox<Content: View>
     //.padding(.horizontal, 16)
     //.padding(.vertical, 10)
 }
-
 
 // box의 width와 height를 조절할 수 있는 Box, content에는 Box안의 내용이 들어감
 @ViewBuilder
@@ -112,7 +103,105 @@ func roundedFixedSizeBox<Content: View>
 }
 
 
-// MARK: OthersMissionView
+// MARK: ChatListView
+// 채팅방 리스트 - NavigationLink로 채팅방 연결
+@ViewBuilder
+func chatList
+(imageTitle: String, missionTitle: String, lastChat: String, timeInfo: String) -> some View {
+    NavigationLink {
+        // destination
+        GroupChatView()
+    } label: {
+        makeShadowEffectRoundedRectangle {
+            HStack (alignment: .center, spacing: 0) {
+                makeShadowEffectCircle(ciecleSize: 42) {
+                    Image("IconChatList")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(maxWidth: .infinity)
+                }
+                VStack (alignment: .leading,spacing: 0){
+                    Text(missionTitle)
+                        .foregroundColor(Color("GrayScale02"))
+                        .font(
+                            Font.custom("Pretendard-Bold", size: 16)
+                        )
+                        .padding(.bottom, 5)
+                    
+                    Text(lastChat)
+                        .lineLimit(1)
+                        .foregroundColor(Color("GrayScale07"))
+                        .font(
+                            Font.custom("Pretendard-Medium", size: 12)
+                        )
+                } // VStack
+                .padding(.leading, 3)
+                Spacer()
+                Text(timeInfo)
+                    .foregroundColor(Color("GrayScale05"))
+                    .font(
+                        Font.custom("Pretendard-Medium", size: 12)
+                    )
+                //.padding(.horizontal, 15)
+            }
+        }
+        .padding(.horizontal, 16)
+        .padding(.vertical, 8)
+    }
+}
+
+
+// MARK: GroupChatView
+// 채팅방 버블 - 채팅방의 대화 내용을 담고 있는 Bubble -> textString, textTime만 전달해주면 됨
+@ViewBuilder
+func chatBubble
+(textString: String, textTime: String) -> some View {
+    copyChatBoxView {
+        VStack (alignment: .leading){
+            Text(textString)
+                .foregroundColor(Color("GrayScale01"))
+                .font(.system(size: 14))
+                .lineLimit(20)
+                .padding(.bottom, 2)
+            HStack (spacing: 0){
+                Spacer()
+                Text(textTime)
+                    .foregroundColor(Color("GrayScale07"))
+                    .font(.system(size: 10))
+            }
+        }
+    }
+}
+
+// 채팅방의 버블 - 채팅방의 버블의 그림자를 주는 효과
+@ViewBuilder
+func copyChatBoxView<Content: View>
+(content: () -> Content) -> some View {
+    ZStack (alignment: .trailing){
+        content()
+            .padding(16)
+            .background(Color.black)
+            .cornerRadius(4)
+            .shadow(color: Color(.sRGBLinear, white: 1, opacity: 0), radius: 0)
+            .frame(width: UIScreen.main.bounds.width*0.67)
+            .offset(x: 3, y: 3)
+        
+        content()
+            .padding(16)
+            .background(Color("GrayScale10"))
+            .cornerRadius(4)
+            .overlay(
+                RoundedRectangle(cornerRadius: 13)
+                    .stroke(Color.black, lineWidth: 4)
+            )
+            .cornerRadius(8)
+            .shadow(color: Color(.sRGBLinear, white: 1, opacity: 0), radius: 0)
+            .frame(width: UIScreen.main.bounds.width*0.67)
+    }
+}
+
+
+// MARK: ShowOtherMissionView
 @ViewBuilder
 func roundedFixedSizeImageBox<Content: View>
 (boxWidth: CGFloat, boxHeight: CGFloat, boxBackgroundImage: String, @ViewBuilder content: () -> Content) -> some View {
@@ -131,3 +220,5 @@ func roundedFixedSizeImageBox<Content: View>
                 }
         )
 }
+
+

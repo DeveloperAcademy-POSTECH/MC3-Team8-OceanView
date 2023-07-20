@@ -7,143 +7,58 @@
 
 import SwiftUI
 
-// 해당하는 Text의 크기를 저장해줌
-struct TextSizeKey: PreferenceKey {
-    static var defaultValue: CGSize = .zero
-    
-    static func reduce(value: inout CGSize, nextValue: () -> CGSize) {
-        value = nextValue()
-    }
-}
-
-// 채팅을 보내는 사람이 상대방일때
-struct ChatYourBalloonView: View {
-    @State private var textSize: CGSize = .zero
+struct ChatBubbleView: View {
+    // 채팅을 보낸 사람이 나인지 상대방인지 구분해줌
+    var isMyChat: Bool
     
     var body: some View {
-        VStack (alignment: .leading, spacing: 0){
-            HStack (spacing: 0){
-                Image("Imgprofile")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(maxWidth: .infinity)
-                    .frame(width: 42)
-                    .clipShape(Circle())
-                    .overlay(Circle().stroke(.black, lineWidth: 2))
-                    .padding(.trailing, 19)
-                Text("Puppy")
-                    .font(.system(size: 15, weight: .bold))
-                Spacer()
-            } // HStack
-            .padding(.bottom, 10)
-            
-            ZStack(alignment: .trailing){
-                copyView()
-                    .offset(x : 6, y:8)
-                VStack {
-                    Text("동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세")
-                        .padding(.horizontal, 30)
-                        .padding(.vertical, 20)
-                        .border(.red)
-                        .background(Color("GrayScale10"))
-                        .cornerRadius(4)
-                        .overlay(
-                                RoundedRectangle(cornerRadius: 4)
-                                    .stroke(Color.black, lineWidth: 4)
-                            )
-                        .cornerRadius(4)
-                        .shadow(color: Color(.sRGBLinear, white: 1, opacity: 0), radius: 0)
-                        .frame(width: UIScreen.main.bounds.width*0.67)
-                }
+        VStack (spacing: 0){
+            // 나의 채팅이면
+            if isMyChat {
+                HStack (spacing: 0){
+                    Spacer()
+                    Text("Puppy")
+                        .font(.system(size: 15, weight: .bold))
+                    .padding(.horizontal, 12)
+                    .foregroundColor(Color("Main01"))
+                    Image("Imgprofile")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(maxWidth: .infinity)
+                        .frame(width: 42)
+                        .clipShape(Circle())
+                        .overlay(Circle().stroke(.black, lineWidth: 2))
+                        
+                } // HStack
+                .padding(.bottom, 10)
                 
-            } // ZStack
+                chatBubble(textString: "안녕하세요, 반갑습니다. 저는 여러분들과 행복한 한주를 보내고 싶어요. 인생이 뭔지 잘 모르겠어요. 제가 헤어지고 나서 2주 정도가 지난 것 같아요. 그러나 아직 제 마음은 뒤숭숭 하더라구요. 그래서 저는 여러분들과 새롭고 재미있는 미션을 하면서 친해지고 싶어요. 네? 여러분들도 그렇다고 한다면, 저 또한, 너무 좋아요.", textTime: "AM 08:26") .frame(maxWidth: .infinity, alignment: .trailing)
+            } else { // 다른 사람의 채팅이면
+                HStack (spacing: 0){
+                    Image("Imgprofile")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(maxWidth: .infinity)
+                        .frame(width: 42)
+                        .clipShape(Circle())
+                        .overlay(Circle().stroke(.black, lineWidth: 2))
+                    Text("Puppy")
+                        .font(.system(size: 16, weight: .bold))
+                        .padding(.horizontal, 12)
+                        .foregroundColor(Color("Point01"))
+                    Spacer()
+                } // HStack
+                .padding(.bottom, 10)
+                
+                chatBubble(textString: "안녕하세요, 반갑습니다. 저는 여러분들과 행복한 한주를 보내고 싶어요. 인생이 뭔지 잘 모르겠어요. 제가 헤어지고 나서 2주 정도가 지난 것 같아요. 그러나 아직 제 마음은 뒤숭숭 하더라구요. 그래서 저는 여러분들과 새롭고 재미있는 미션을 하면서 친해지고 싶어요. 네? 여러분들도 그렇다고 한다면, 저 또한, 너무 좋아요.", textTime: "AM 08:26") .frame(maxWidth: .infinity, alignment: .leading)
+            }
         } // VStack
-        .padding(.bottom, 40)
-    }
-    
-    private func copyView() -> some View {
-        Text("동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세")
-            .padding(.horizontal, 30)
-            .padding(.vertical, 20)
-            .border(.red)
-            .background(Color.black)
-            .border(Color.black)
-            .cornerRadius(4)
-            .shadow(color: Color(.sRGBLinear, white: 1, opacity: 0), radius: 0)
-            .frame(width: UIScreen.main.bounds.width * 0.67)
-    }
-}
-
-
-// 채팅을 보내는 사람이 나일때
-struct ChatMyBalloonView: View {
-    @State private var textSize: CGSize = .zero
-    var body: some View {
-        VStack (alignment: .trailing, spacing: 0){
-            HStack (spacing: 0){
-                Spacer()
-                Text("Puppy")
-                    .font(.system(size: 15, weight: .bold))
-                Image("Imgprofile")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(maxWidth: .infinity)
-                    .frame(width: 42)
-                    .clipShape(Circle())
-                    .overlay(Circle().stroke(.black, lineWidth: 2))
-                    .padding(.horizontal, 19)
-            } // HStack
-            .padding(.bottom, 10)
-            
-            RoundedRectangle(cornerRadius: 4)
-                .foregroundColor(.white)
-            // MARK: Text의 크기에 따라 Box의 크기가 바뀌는 코드 구현해야 함
-            //.frame(width: textSize.width + 20, height: textSize.height + 50)
-            //.frame(minWidth: 300, minHeight: 20)
-                .frame(
-                    width: max(textSize.width + 30, 300), // Minimum width of 100
-                    height: max(textSize.height + 70, 20) // Minimum height of 100
-                )
-            .shadow(color: .black, radius: 1, x: 4, y: 4)
-                .overlay {
-                    RoundedRectangle(cornerRadius: 4)
-                        .stroke(.black, lineWidth: 2)
-                        .overlay {
-                            VStack (alignment: .leading){
-                                Text("가나다라마바사아자차카타파하아아아아가나다라마바사아자차카타파하아아아아가나다라마바사아자차카타파ㄹㅇㅎㅇㄹㅎㅇㄹㅎㄹㅎㅇㄹㅎㅇㄹㅇㄹㅎㅇㄹㅎㅇㄹㅎㅇㄹㅎㅇㄹㅎㅇㄹㅎㅇㄹㅎㅇㄹㅎㅇㄹㅎㅇㄹㅎㅇㄹㅎㅇㄹ흋퓿퓿ㅍ하아아아아dkdsnvsknvskvndvknvdsndksnvnksnkdknskvskdkvnkdsknsskdvvndksvnkskdnvknvnkknvvnsknvknvkdsvnavnljksvbjkalsdvbvklsdabkjvalbvasdhlivbsdajibsdvihlvsdui;ovbdovgueawbfvuaeogsduiofgdnsaojiewhfisdafgbsdaupf;i'hasdhjfbdsiufubsaigbsoiiasbfidbfi")
-//                                    .frame(height: 200)
-//                                    .frame(minWidth: 300, maxHeight: 600)
-                                    .border(.red)
-                                    .lineLimit(20)
-                                    .background(
-                                        GeometryReader { geometry in
-                                            Color.clear
-                                                .preference(key: TextSizeKey.self, value: geometry.size)
-                                        }
-                                    )
-                                    .onPreferenceChange(TextSizeKey.self) { textSize in
-                                        DispatchQueue.main.async {
-                                            self.textSize = textSize
-                                            // print("width:", textSize.width)
-                                            //print("height:", textSize.height)
-                                        }
-                                    }
-                                HStack {
-                                    Spacer()
-                                    Text("AM 08:00")
-                                }
-                            } // VStack
-                            .padding()
-                        } // overlay
-                } // overlay
-                .padding(.horizontal, 16)
-        } // VStack
-        .padding(.bottom, 40)
-        
+        .padding(.horizontal, 15)
+        .padding(.bottom, 20)
     }
 }
 struct ChatBalloonView_Previews: PreviewProvider {
     static var previews: some View {
-        ChatYourBalloonView()
+        ChatBubbleView(isMyChat: true)
     }
 }

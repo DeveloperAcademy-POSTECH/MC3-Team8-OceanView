@@ -16,7 +16,7 @@ struct GroupChatView: View {
             Color("Main02").ignoresSafeArea()
             
             VStack (spacing: 0){
-                
+                // MARK: 화면 상단의 미션 안내
                 roundedInfinityWidthBox(boxHeight: 40, boxBackgroundColor: "Point01") {
                     RoundedRectangle(cornerRadius: 4)
                         .inset(by: 1)
@@ -30,6 +30,8 @@ struct GroupChatView: View {
                 .padding(.horizontal, 16)
                 .padding(.bottom, 28)
                 
+                
+                // MARK: 화면 중앙의 채팅들을 스크롤
                 ScrollView{
                     VStack (spacing: 0){
                         Text("미션이 시작되었습니다.")
@@ -39,15 +41,17 @@ struct GroupChatView: View {
                             .font(Font.custom("Pretendard-Bold", size: 13))
                             .foregroundColor(Color("Main01"))
                         
-                        ChatYourBalloonView()
-                        ChatMyBalloonView()
-                        ChatYourBalloonView()
-                        ChatMyBalloonView()
-                        ChatYourBalloonView()
-                        ChatMyBalloonView()
-                    }
-                }
+                        ChatBubbleView(isMyChat: false)
+                        ChatBubbleView(isMyChat: true)
+                        ChatBubbleView(isMyChat: false)
+                        ChatBubbleView(isMyChat: true)
+                        ChatBubbleView(isMyChat: false)
+                    } // VStack
+                } // ScrollView
+                
+                
                 Spacer()
+                // MARK: 화면 하단의 TextField 및 전송 버튼
                 HStack (spacing: 0){
                     roundedInfinityWidthBox(boxHeight: 40, boxBackgroundColor: "GrayScale10") {
                         TextField("메세지를 입력하세요", text: $message)
@@ -59,7 +63,7 @@ struct GroupChatView: View {
                         Button {
                             // action
                         } label: {
-                            Text("💌")
+                            Text(Image("IconSendMessage"))
                         }
                     }
                     .padding(.trailing, 16)
