@@ -177,6 +177,7 @@
 		3EECA2F92A68C45300973755 /* ShowOtherMissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EECA2F82A68C45300973755 /* ShowOtherMissionView.swift */; };
 		3EECA2FB2A68C46800973755 /* UploadPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EECA2FA2A68C46800973755 /* UploadPhotoView.swift */; };
 		3EECA2FD2A68C7E100973755 /* SendHeartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EECA2FC2A68C7E100973755 /* SendHeartView.swift */; };
+		3EECA2FF2A68E32D00973755 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EECA2FE2A68E32D00973755 /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -351,6 +352,7 @@
 		3EECA2F82A68C45300973755 /* ShowOtherMissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowOtherMissionView.swift; sourceTree = "<group>"; };
 		3EECA2FA2A68C46800973755 /* UploadPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPhotoView.swift; sourceTree = "<group>"; };
 		3EECA2FC2A68C7E100973755 /* SendHeartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendHeartView.swift; sourceTree = "<group>"; };
+		3EECA2FE2A68E32D00973755 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -461,6 +463,7 @@
 				3E4C1DA42A677A6F007BAF21 /* GroupChatView.swift */,
 				3E4C1DA62A67AE40007BAF21 /* ChatBalloonView.swift */,
 				3E4C1DA82A67DBB5007BAF21 /* SwiftUIView.swift */,
+				3EECA2FE2A68E32D00973755 /* TestView.swift */,
 			);
 			path = Chatting;
 			sourceTree = "<group>";
@@ -987,6 +990,7 @@
 				3EECA2FD2A68C7E100973755 /* SendHeartView.swift in Sources */,
 				3E4C1C5F2A676B57007BAF21 /* ChatListView.swift in Sources */,
 				3E4C1DA92A67DBB5007BAF21 /* SwiftUIView.swift in Sources */,
+				3EECA2FF2A68E32D00973755 /* TestView.swift in Sources */,
 				3E4C1DA72A67AE40007BAF21 /* ChatBalloonView.swift in Sources */,
 				3E4C1DA32A677405007BAF21 /* ViewBuilder.swift in Sources */,
 				3E4C1C5A2A66F782007BAF21 /* HomeView.swift in Sources */,

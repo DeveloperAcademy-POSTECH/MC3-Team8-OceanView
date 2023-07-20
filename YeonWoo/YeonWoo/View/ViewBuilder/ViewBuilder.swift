@@ -65,8 +65,59 @@ func chatList
 }
 
 
-
 // MARK: GroupChatView
+// 채팅방 버블 - 채팅방의 대화 내용을 담고 있는 Bubble -> textString, textTime만 전달해주면 됨
+@ViewBuilder
+func chatBubble
+(textString: String, textTime: String) -> some View {
+    copyChatBoxView {
+        VStack (alignment: .leading){
+            Text(textString)
+                .foregroundColor(Color("GrayScale01"))
+                .font(.system(size: 14))
+                .lineLimit(20)
+            HStack (spacing: 0){
+                Spacer()
+                Text(textTime)
+                    .foregroundColor(Color("GrayScale07"))
+                    .font(.system(size: 10))
+            }
+        }
+    }
+}
+
+@ViewBuilder
+func copyChatBoxView<Content: View>
+(content: () -> Content) -> some View {
+    ZStack (alignment: .trailing){
+        content()
+            .padding(16)
+            .background(Color.black)
+            .cornerRadius(4)
+            .shadow(color: Color(.sRGBLinear, white: 1, opacity: 0), radius: 0)
+            .frame(width: UIScreen.main.bounds.width*0.67)
+            .offset(x: 3, y: 3)
+        
+        content()
+            .padding(16)
+            .background(Color("GrayScale10"))
+            .cornerRadius(4)
+            .overlay(
+                RoundedRectangle(cornerRadius: 13)
+                    .stroke(Color.black, lineWidth: 4)
+            )
+            .cornerRadius(8)
+            .shadow(color: Color(.sRGBLinear, white: 1, opacity: 0), radius: 0)
+            .frame(width: UIScreen.main.bounds.width*0.67)
+    }
+}
+
+
+
+
+
+
+
 // box의 height를 조절할 수 있는 Box width는 infinity, content에는 Box안의 내용이 들어감
 @ViewBuilder
 func roundedInfinityWidthBox<Content: View>
