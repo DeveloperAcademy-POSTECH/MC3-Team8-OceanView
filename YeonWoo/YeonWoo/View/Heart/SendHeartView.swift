@@ -2,14 +2,14 @@
 //  SendHeartView.swift
 //  YeonWoo
 //
-//  Created by Bokyung on 2023/07/20.
+//  Created by Bokyung on 2023/07/21.
 //
 
 import SwiftUI
 
 struct SendHeartView: View {
     var body: some View {
-        Text("This is send heart view~❤️")
+        Text("Hello, World!")
     }
 }
 
