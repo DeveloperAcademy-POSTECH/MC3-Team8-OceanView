@@ -17,45 +17,13 @@ struct MissionTestView: View {
         ZStack {
             Color.red
             
-            RoundedRectangle(cornerRadius: 20)
-                .foregroundColor(Color("GrayScale10"))
-                .frame(width: 310, height: 78)
-                .overlay(content: {
-                    HStack (spacing: 0) {
-                        VStack (alignment: .leading, spacing: 4) {
-                            Text(missionTitle)
-                                .font(.system(size: 16, weight: .bold))
-                            Text(missionDate)
-                                .font(.system(size: 12))
-                        } // VStack
-                        Spacer()
-                        Divider()
-                            .frame(minWidth: 3)
-                            .background(Color.black)
-                            .frame(height: 30)
-                            
-                        Spacer()
-                        Button {
-                            // 하트를 보낼 수 있는 버튼
-                        } label: {
-                            HStack(spacing: 4){
-                                Text("\(agreeNumber)")
-                                    .font(.system(size: 14))
-                                    .foregroundColor(Color("GrayScale01"))
-                                Text(Image(systemName: "heart"))
-                                    .font(.system(size: 14))
-                                    .foregroundColor(Color("GrayScale01"))
-                            }
-                            .padding(10)
-                        }
-                    } // HStack
-                    .padding(.horizontal, 16)
-                })
-                .padding(.bottom, 16)
+           
         } // ZStack
 
     }
 }
+
+
 
 struct MissionTestView_Previews: PreviewProvider {
     static var previews: some View {

@@ -12,7 +12,7 @@ import SwiftUI
 // content에 네모 안에 들어갈 것을 넣으면, shadow효과를 주는 View를 반환해줌
 @ViewBuilder
 func makeShadowEffectRoundedRectangle<Content: View>
-(content: () -> Content) -> some View {
+(backgroundColor: String, content: () -> Content) -> some View {
     ZStack (alignment: .trailing){
         content()
             .padding(16)
@@ -25,7 +25,7 @@ func makeShadowEffectRoundedRectangle<Content: View>
         content()
             .padding(16)
             .frame(maxWidth: .infinity)
-            .background(Color("GrayScale10"))
+            .background(Color(backgroundColor))
             .cornerRadius(4)
             .overlay(
                 RoundedRectangle(cornerRadius: 13)
@@ -134,7 +134,7 @@ func chatList
         // destination
         GroupChatView()
     } label: {
-        makeShadowEffectRoundedRectangle {
+        makeShadowEffectRoundedRectangle (backgroundColor: "GrayScale10") {
             HStack (alignment: .center, spacing: 0) {
                 makeShadowEffectCircle(ciecleSize: 42) {
                     Image("IconChatList")
@@ -203,7 +203,7 @@ func copyChatBoxView<Content: View>
         content()
             .padding(16)
             .background(Color.black)
-            .cornerRadius(4)
+            .cornerRadius(16)
             .shadow(color: Color(.sRGBLinear, white: 1, opacity: 0), radius: 0)
             .frame(width: UIScreen.main.bounds.width*0.67)
             .offset(x: 3, y: 3)

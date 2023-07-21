@@ -18,7 +18,7 @@ struct MissionCardView: View {
             
             roundedFixedSizeImageBox(imgaeTitle: "ImgMissionCerti", boxWidth: 342, boxHeight: 342)
             
-            makeShadowEffectRoundedRectangle {
+            makeShadowEffectRoundedRectangle (backgroundColor: "GrayScale10") {
                 HStack (spacing: 0) {
                     VStack (alignment: .leading, spacing: 4) {
                         Text(missionTitle)
