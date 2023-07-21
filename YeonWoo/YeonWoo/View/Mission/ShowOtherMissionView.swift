@@ -34,18 +34,70 @@ struct ShowOtherMissionView: View {
             } // HStack
             .padding(.horizontal, 26)
             
-            TabView {
-                ForEach(0..<6) { index in
-                    MissionCardView(missionTitle: $missionTitle, missionDate: $missionDate, agreeNumber: $agreeNumber)
-                }
-            }
-            .tabViewStyle(.page)
-            .indexViewStyle(.page(backgroundDisplayMode: .never))
-            .frame(height: 400)
-            .frame(maxWidth: .infinity)
+            
+            MissionCardView()
         }
     }
 }
+
+
+//@ViewBuilder
+//func roundedFixedSizeImageBox<Content: View>
+//(boxWidth: CGFloat, boxHeight: CGFloat, boxBackgroundImage: String, @ViewBuilder content: () -> Content) -> some View {
+//    Rectangle()
+//        .foregroundColor(.clear)
+//        .frame(width: boxWidth, height: boxHeight)
+//        .background(Color("GrayScale01"))
+//        .cornerRadius(20)
+//        .overlay(
+//            Image(boxBackgroundImage)
+//                .resizable()
+//                .aspectRatio(contentMode: .fit)
+//                .frame(maxWidth: .infinity)
+//                .overlay {
+//                    content()
+//                }
+//        )
+//}
+
+
+//RoundedRectangle(cornerRadius: 20)
+//    .foregroundColor(Color("GrayScale10"))
+//    .frame(width: 310, height: 78)
+//    .overlay(content: {
+//        HStack (spacing: 0) {
+//            VStack (alignment: .leading, spacing: 4) {
+//                Text(missionTitle)
+//                    .font(.system(size: 16, weight: .bold))
+//                Text(missionDate)
+//                    .font(.system(size: 12))
+//            } // VStack
+//            Spacer()
+//            Divider()
+//                .frame(minWidth: 3)
+//                .background(Color.black)
+//                .frame(height: 30)
+//
+//            Spacer()
+//            Button {
+//                // 하트를 보낼 수 있는 버튼
+//            } label: {
+//                HStack(spacing: 4){
+//                    Text("\(agreeNumber)")
+//                        .font(.system(size: 14))
+//                        .foregroundColor(Color("GrayScale01"))
+//                    Text(Image(systemName: "heart"))
+//                        .font(.system(size: 14))
+//                        .foregroundColor(Color("GrayScale01"))
+//                }
+//                .padding(10)
+//            }
+//        } // HStack
+//        .padding(.horizontal, 16)
+//    })
+//    .padding(.bottom, 16)
+//    .offset(x: 0, y: 160)
+
 
 struct ShowOtherMissionView_Previews: PreviewProvider {
     static var previews: some View {

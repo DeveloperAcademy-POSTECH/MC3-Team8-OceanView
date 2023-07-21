@@ -178,6 +178,7 @@
 		3EECA2FB2A68C46800973755 /* UploadPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EECA2FA2A68C46800973755 /* UploadPhotoView.swift */; };
 		3EECA2FD2A68C7E100973755 /* SendHeartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EECA2FC2A68C7E100973755 /* SendHeartView.swift */; };
 		3EECA2FF2A68E32D00973755 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EECA2FE2A68E32D00973755 /* TestView.swift */; };
+		3EECA3022A693FA200973755 /* MissionTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EECA3012A693FA200973755 /* MissionTestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -353,6 +354,7 @@
 		3EECA2FA2A68C46800973755 /* UploadPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPhotoView.swift; sourceTree = "<group>"; };
 		3EECA2FC2A68C7E100973755 /* SendHeartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendHeartView.swift; sourceTree = "<group>"; };
 		3EECA2FE2A68E32D00973755 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		3EECA3012A693FA200973755 /* MissionTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionTestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -752,10 +754,11 @@
 		3EECA2F32A68C2C600973755 /* Mission */ = {
 			isa = PBXGroup;
 			children = (
-				3EECA2F42A68C3B100973755 /* MissionCardView.swift */,
 				3EECA2F62A68C42F00973755 /* MissionCertificationView.swift */,
-				3EECA2F82A68C45300973755 /* ShowOtherMissionView.swift */,
+				3EECA2F42A68C3B100973755 /* MissionCardView.swift */,
 				3EECA2FA2A68C46800973755 /* UploadPhotoView.swift */,
+				3EECA3012A693FA200973755 /* MissionTestView.swift */,
+				3EECA2F82A68C45300973755 /* ShowOtherMissionView.swift */,
 			);
 			path = Mission;
 			sourceTree = "<group>";
@@ -997,6 +1000,7 @@
 				3E4C1DA52A677A6F007BAF21 /* GroupChatView.swift in Sources */,
 				3E4C1C442A66E8FB007BAF21 /* YeonWooApp.swift in Sources */,
 				3EECA2F52A68C3B100973755 /* MissionCardView.swift in Sources */,
+				3EECA3022A693FA200973755 /* MissionTestView.swift in Sources */,
 				3E4C1C562A66EB48007BAF21 /* SplashView.swift in Sources */,
 				3EECA2F72A68C42F00973755 /* MissionCertificationView.swift in Sources */,
 			);
