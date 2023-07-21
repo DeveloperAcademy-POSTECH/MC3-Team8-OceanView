@@ -15,32 +15,7 @@ struct MissionCertificationView: View {
                 
                 VStack(spacing: 0) {
                     // MARK: 화면 상단의 미션 게시판 헤더
-                    HStack (spacing: 0){
-                        VStack (alignment: .leading, spacing: 0){
-                            Text("미션 게시판")
-                                .font(.system(size: 20, weight: .bold))
-                                .foregroundColor(Color("Point01"))
-                            Text("수행했던 미션을 인증하고 공유해보세요.")
-                                .font(.system(size: 16, weight: .regular))
-                                .foregroundColor(Color("GrayScale01"))
-                        } // VStack - Text
-                        Spacer()
-                        makeShadowEffectCircle(ciecleSize: 64) {
-                            Image("ImgProfile2")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(maxWidth: .infinity)
-                        }
-                        
-                    } // HStack
-                    .padding(.horizontal, 16)
-                    .padding(.vertical, 20)
-                    .background(Color("Main02-2"))
-                    
-                    Divider()
-                        .frame(minHeight: 3)
-                        .background(Color.black)
-                        .foregroundColor(.black)
+                    MissionHeaderView()
                     
                     // MARK: 중앙~하단의 미션 인증 사진 리스트들
                     ScrollView {
@@ -51,7 +26,7 @@ struct MissionCertificationView: View {
                     } // 위아래 ScrollView
                 } // VStack
                 
-                
+                // MARK: 화면 하단 우측의 +버튼
                 NavigationLink {
                     UploadPhotoView()
                 } label: {

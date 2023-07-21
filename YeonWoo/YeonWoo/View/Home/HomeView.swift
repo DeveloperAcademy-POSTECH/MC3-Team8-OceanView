@@ -10,9 +10,9 @@ import SwiftUI
 struct HomeView: View {
     var body: some View {
         VStack (spacing: 0){
-            Text("This is HomeView~!")
-            CardView()
-                .padding(20)
+            MainHeaderView()
+            
+            Spacer()
         }
         
     }
