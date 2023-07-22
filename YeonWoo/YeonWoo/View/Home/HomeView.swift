@@ -13,24 +13,20 @@ struct HomeView: View {
         VStack (spacing: 0){
             // MARK: 화면 상단의 헤더
             MainHeaderView()
+                .padding(.bottom, 16)
             
             // MARK: 화면 중앙
             // Case1) 그룹 매치되었을때
             // Case2) 그룹 매치되지 않았을때
             if isGroupMatched { // 그룹이 매치되었을떄
-                
+                MissionInfoView()
+                    .padding(.top, 32)
+                    .padding(.horizontal, 16)
             }
             else{ // 그룹이 매치되지 않았을때
-                
+                HomeMatchedView()
             }
-            MissionInfoView()
-                .padding(.top, 32)
-                .padding(.horizontal, 16)
-            
             Spacer()
-            Text("남은 시간: 2일 1시간 14분")
-            Spacer()
-            
         }
         
     }

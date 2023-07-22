@@ -36,6 +36,36 @@ func makeShadowEffectRoundedRectangle<Content: View>
     }
 }
 
+
+// content를 넣으면 cornerRadius를 지정할 수 있는 큰 그림자를 가진 뷰를 그려줌
+// mission, 채팅방 이동을 그리기 위한 뷰빌더
+@ViewBuilder
+func makeShadowEffectRoundedRectangle2<Content: View>
+(backgroundColor: String, cornerRadius: CGFloat, content: () -> Content) -> some View {
+    ZStack (alignment: .trailing){
+        content()
+            .padding(6)
+            .frame(width: 96)
+            .background(Color("GrayScale01"))
+            .cornerRadius(cornerRadius)
+            .shadow(color: Color(.sRGBLinear, white: 1, opacity: 0), radius: 0)
+            .offset(x: 4, y: 4)
+        
+        content()
+            .padding(6)
+            .frame(width: 96)
+            .background(Color(backgroundColor))
+            .cornerRadius(cornerRadius)
+            .overlay(
+                RoundedRectangle(cornerRadius: cornerRadius)
+                    .stroke(Color.black, lineWidth: 2)
+            )
+        //.cornerRadius(cornerRadius)
+            .shadow(color: Color(.sRGBLinear, white: 1, opacity: 0), radius: 0)
+    }
+}
+
+
 // content에 동그라미 안에 들어갈 것을 넣으면, shadow효과를 주는 View를 반환해줌
 @ViewBuilder
 func makeShadowEffectCircle<Content: View>

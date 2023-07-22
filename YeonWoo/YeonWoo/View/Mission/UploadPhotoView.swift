@@ -72,33 +72,6 @@ struct UploadPhotoView: View {
 }
 
 
-// content를 넣으면 cornerRadius가 큰 그림자를 가진 뷰를 그려줌
-// mission을 그리기 위한 뷰빌더
-@ViewBuilder
-func makeShadowEffectRoundedRectangle2<Content: View>
-(backgroundColor: String, cornerRadius: CGFloat, content: () -> Content) -> some View {
-    ZStack (alignment: .trailing){
-        content()
-            .padding(6)
-            .frame(width: 96)
-            .background(Color("GrayScale01"))
-            .cornerRadius(cornerRadius)
-            .shadow(color: Color(.sRGBLinear, white: 1, opacity: 0), radius: 0)
-            .offset(x: 4, y: 4)
-        
-        content()
-            .padding(6)
-            .frame(width: 96)
-            .background(Color(backgroundColor))
-            .cornerRadius(cornerRadius)
-            .overlay(
-                RoundedRectangle(cornerRadius: cornerRadius)
-                    .stroke(Color.black, lineWidth: 2)
-            )
-        //.cornerRadius(cornerRadius)
-            .shadow(color: Color(.sRGBLinear, white: 1, opacity: 0), radius: 0)
-    }
-}
 
 
 struct UploadPhotoView_Previews: PreviewProvider {
