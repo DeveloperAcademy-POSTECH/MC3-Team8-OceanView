@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    var isGroupMatched: Bool = false
+    var isGroupMatched: Bool = true
     var body: some View {
         VStack (spacing: 0){
             // MARK: 화면 상단의 헤더
@@ -19,9 +19,7 @@ struct HomeView: View {
             // Case1) 그룹 매치되었을때
             // Case2) 그룹 매치되지 않았을때
             if isGroupMatched { // 그룹이 매치되었을떄
-                MissionInfoView()
-                    .padding(.top, 32)
-                    .padding(.horizontal, 16)
+                HomeNotMatchedView()
             }
             else{ // 그룹이 매치되지 않았을때
                 HomeMatchedView()
@@ -32,18 +30,6 @@ struct HomeView: View {
     }
 }
 
-struct CardView: View {
-    var body: some View {
-        Rectangle()
-            .cornerRadius(20)
-            .frame(maxWidth: .infinity)
-            .foregroundColor(Color("Main02"))
-            .overlay {
-                Text("1일 12시간 남았습니다.. ")
-                
-            }
-    }
-}
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
