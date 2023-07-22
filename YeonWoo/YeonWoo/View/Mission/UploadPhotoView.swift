@@ -21,24 +21,7 @@ struct UploadPhotoView: View {
                 .padding(.bottom, 30)
                 
                 // MARK: 화면 중앙의 미션 정보
-                makeShadowEffectRoundedRectangle(backgroundColor: "Point01") {
-                    Text("“비오는 날 영일대에서 노래를 들으며, 키위먹고, 정장입고, 엉덩이 춤 추면서 수영하기”")
-                        .foregroundColor(Color("GrayScale10"))
-                        .font(.system(size: 20, weight: .bold))
-                }
-                .padding(.bottom, 15)
-                .overlay {
-                    makeShadowEffectRoundedRectangle2(backgroundColor: "GrayScale10", cornerRadius: 50) {
-                        HStack{
-                            Text(Image(systemName: "heart.fill"))
-                                .foregroundColor(Color("Main01"))
-                            
-                            Text("Mission")
-                                .font(.system(size: 14, weight: .medium))
-                        }
-                    }
-                    .offset(x: -115, y: -60)
-                }
+                MissionInfoView()
                 
                 // MARK: 중앙의 사진 업로드 버튼
                 Button {

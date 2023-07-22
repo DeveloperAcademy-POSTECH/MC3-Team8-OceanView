@@ -173,6 +173,9 @@
 		3E4C1DA72A67AE40007BAF21 /* ChatBalloonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4C1DA62A67AE40007BAF21 /* ChatBalloonView.swift */; };
 		3EE07B172A6ACE9F00A1BAAB /* SendHeartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE07B162A6ACE9F00A1BAAB /* SendHeartView.swift */; };
 		3EE07B1A2A6AD46100A1BAAB /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE07B192A6AD46100A1BAAB /* HeaderView.swift */; };
+		3EE07B1C2A6AD7D300A1BAAB /* MissionInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE07B1B2A6AD7D300A1BAAB /* MissionInfoView.swift */; };
+		3EE07B1E2A6BB73500A1BAAB /* HomeNotMatchedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE07B1D2A6BB73500A1BAAB /* HomeNotMatchedView.swift */; };
+		3EE07B202A6BB75F00A1BAAB /* HomeMatchedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE07B1F2A6BB75F00A1BAAB /* HomeMatchedView.swift */; };
 		3EECA2F52A68C3B100973755 /* MissionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EECA2F42A68C3B100973755 /* MissionCardView.swift */; };
 		3EECA2F72A68C42F00973755 /* MissionCertificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EECA2F62A68C42F00973755 /* MissionCertificationView.swift */; };
 		3EECA2FB2A68C46800973755 /* UploadPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EECA2FA2A68C46800973755 /* UploadPhotoView.swift */; };
@@ -347,6 +350,9 @@
 		3E4C1DA62A67AE40007BAF21 /* ChatBalloonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBalloonView.swift; sourceTree = "<group>"; };
 		3EE07B162A6ACE9F00A1BAAB /* SendHeartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendHeartView.swift; sourceTree = "<group>"; };
 		3EE07B192A6AD46100A1BAAB /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		3EE07B1B2A6AD7D300A1BAAB /* MissionInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionInfoView.swift; sourceTree = "<group>"; };
+		3EE07B1D2A6BB73500A1BAAB /* HomeNotMatchedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNotMatchedView.swift; sourceTree = "<group>"; };
+		3EE07B1F2A6BB75F00A1BAAB /* HomeMatchedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMatchedView.swift; sourceTree = "<group>"; };
 		3EECA2F42A68C3B100973755 /* MissionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionCardView.swift; sourceTree = "<group>"; };
 		3EECA2F62A68C42F00973755 /* MissionCertificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionCertificationView.swift; sourceTree = "<group>"; };
 		3EECA2FA2A68C46800973755 /* UploadPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPhotoView.swift; sourceTree = "<group>"; };
@@ -444,6 +450,8 @@
 			isa = PBXGroup;
 			children = (
 				3E4C1C592A66F782007BAF21 /* HomeView.swift */,
+				3EE07B1F2A6BB75F00A1BAAB /* HomeMatchedView.swift */,
+				3EE07B1D2A6BB73500A1BAAB /* HomeNotMatchedView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -743,6 +751,7 @@
 			isa = PBXGroup;
 			children = (
 				3EE07B192A6AD46100A1BAAB /* HeaderView.swift */,
+				3EE07B1B2A6AD7D300A1BAAB /* MissionInfoView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -989,12 +998,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EE07B1C2A6AD7D300A1BAAB /* MissionInfoView.swift in Sources */,
 				3E4C1C462A66E8FB007BAF21 /* ContentView.swift in Sources */,
 				3EECA2FB2A68C46800973755 /* UploadPhotoView.swift in Sources */,
 				3EECA2FD2A68C7E100973755 /* CheckHeartView.swift in Sources */,
 				3E4C1C5F2A676B57007BAF21 /* ChatListView.swift in Sources */,
 				3E4C1DA72A67AE40007BAF21 /* ChatBalloonView.swift in Sources */,
 				3EE07B172A6ACE9F00A1BAAB /* SendHeartView.swift in Sources */,
+				3EE07B202A6BB75F00A1BAAB /* HomeMatchedView.swift in Sources */,
 				3E4C1DA32A677405007BAF21 /* ViewBuilder.swift in Sources */,
 				3E4C1C5A2A66F782007BAF21 /* HomeView.swift in Sources */,
 				3E4C1DA52A677A6F007BAF21 /* GroupChatView.swift in Sources */,
@@ -1002,6 +1013,7 @@
 				3EECA2F52A68C3B100973755 /* MissionCardView.swift in Sources */,
 				3E4C1C562A66EB48007BAF21 /* SplashView.swift in Sources */,
 				3EECA2F72A68C42F00973755 /* MissionCertificationView.swift in Sources */,
+				3EE07B1E2A6BB73500A1BAAB /* HomeNotMatchedView.swift in Sources */,
 				3EE07B1A2A6AD46100A1BAAB /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
