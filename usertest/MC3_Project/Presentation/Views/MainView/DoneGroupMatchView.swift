@@ -7,51 +7,19 @@
 
 import SwiftUI
 
-struct  DoneGroupMatchView2: View {
+struct  DoneGroupMatchView: View {
     @ObservedObject var vm : ChaListViewModel
     @ObservedObject var mainModel: MainViewModel
 
     var body: some View {
         NavigationView {
-            ZStack(alignment: .center) {
-                    Image("ImgMainMatchCard")
+            ZStack(alignment: .bottom) {
+                roundedFixedSizeImageBox(imgaeTitle: "ImgMainMatchCard", boxWidth: 288, boxHeight: 356)
+                    //.overlay(alignment: .bottom, content: {}
 
                 NavigationLink(destination: MessageView(mainModel: mainModel, vm: vm), tag: 1, selection: $mainModel.selection) {
                     Button {
                         mainModel.selection = 1
-                    } label: {
-//                       makeShadowEffectRoundedRectangle2(backgroundColor: "Main01", cornerRadius: 16) {
-//                            Text("채팅방 이동")
-//                                .foregroundColor(Color("GrayScale10"))
-//                                .bold()
-//                                .padding(.vertical, 4)
-//
-//                        }
-                    }
-
-                }
-
-            }
-            .background(BackgroundClearView())
-        } // NavigationView
-    }
-}
-
-
-struct DoneGroupMatchView: View {
-    @ObservedObject var vm : ChaListViewModel
-    @ObservedObject var mainModel: MainViewModel
-    
-    var body: some View {
-        ZStack {
-            Color("GrayScale01")
-                .opacity(0.5)
-                .ignoresSafeArea()
-            
-            roundedFixedSizeImageBox(imgaeTitle: "ImgMainMatchCard", boxWidth: 288, boxHeight: 356)
-                .overlay(alignment: .bottom, content: {
-                    Button {
-                        
                     } label: {
                         makeShadowEffectRoundedRectangle4(backgroundColor: "Main01", cornerRadius: 16) {
                             Text("채팅방 이동")
@@ -59,12 +27,44 @@ struct DoneGroupMatchView: View {
                                 .bold()
                                 .padding(.vertical, 4)
                         }
-                    } // Button
-                    .padding(24+2)
-                })
-        } // ZStack
+                    }
+                } // NavigationLink
+                .padding(24+2)
+
+            } // ZStack
+            .background(BackgroundClearView())
+        } // NavigationView
     }
 }
+
+
+//struct DoneGroupMatchView2: View {
+//    @ObservedObject var vm : ChaListViewModel
+//    @ObservedObject var mainModel: MainViewModel
+//
+//    var body: some View {
+//        ZStack {
+//            Color("GrayScale01")
+//                .opacity(0.5)
+//                .ignoresSafeArea()
+//
+//            roundedFixedSizeImageBox(imgaeTitle: "ImgMainMatchCard", boxWidth: 288, boxHeight: 356)
+//                .overlay(alignment: .bottom, content: {
+//                    Button {
+//                        mainModel.selection = 1
+//                    } label: {
+//                        makeShadowEffectRoundedRectangle4(backgroundColor: "Main01", cornerRadius: 16) {
+//                            Text("채팅방 이동")
+//                                .foregroundColor(Color("GrayScale10"))
+//                                .bold()
+//                                .padding(.vertical, 4)
+//                        }
+//                    } // Button
+//                    .padding(24+2)
+//                })
+//        } // ZStack
+//    }
+//}
 
 
 @ViewBuilder
@@ -94,6 +94,7 @@ func makeShadowEffectRoundedRectangle4<Content: View>
 
 struct DoneGroupMatchView_Previews: PreviewProvider {
     static var previews: some View {
+//        DoneGroupMatchView(vm: ChaListViewModel(), mainModel: MainViewModel())
         DoneGroupMatchView(vm: ChaListViewModel(), mainModel: MainViewModel())
     }
 }
