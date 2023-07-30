@@ -302,11 +302,11 @@
 		CAED964E2A6CE2FD00A2D77D /* MainView */ = {
 			isa = PBXGroup;
 			children = (
+				CA144B8E2A6D669300BB7D80 /* MainTabView.swift */,
+				CA3ED2A32A6CD967008E88D7 /* MainView.swift */,
 				CA572B362A6EBB5100FD9334 /* DoneGroupMatchView.swift */,
 				CA144B8A2A6D602300BB7D80 /* HomeMatchedView.swift */,
 				CA144B8C2A6D602F00BB7D80 /* HomeNotMatchedView.swift */,
-				CA144B8E2A6D669300BB7D80 /* MainTabView.swift */,
-				CA3ED2A32A6CD967008E88D7 /* MainView.swift */,
 				CAED964F2A6CE5EB00A2D77D /* ViewModel */,
 			);
 			path = MainView;

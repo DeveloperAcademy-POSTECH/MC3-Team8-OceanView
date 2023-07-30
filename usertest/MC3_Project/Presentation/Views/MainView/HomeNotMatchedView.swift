@@ -22,9 +22,11 @@ struct HomeNotMatchedView: View {
                 .padding(.top, 16)
 
             // MARK: 중앙의 남은 시간
-            Text("남은 시간: \(remainTime)")
+            Text("미션 수행까지: \(remainTime)")
                 .foregroundColor(Color("Main01"))
                 .font(.system(size: 12, weight: .medium))
+                .frame(maxWidth: .infinity, alignment: .trailing)
+                .padding(.horizontal, 24)
             
             // MARK: 하단의 카드 뷰
             roundedFixedSizeImageBox(imgaeTitle: "ImgMainCard", boxWidth: 361, boxHeight: 465)
@@ -45,11 +47,9 @@ struct HomeNotMatchedView: View {
                     }
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(16)
-                    
                 )
-            
-        }
-        
+        } // VStack
+        .padding(.top, 16)
     }
 }
 

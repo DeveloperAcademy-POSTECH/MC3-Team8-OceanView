@@ -354,7 +354,7 @@ func chatBubble
                 .font(.system(size: 14))
                 .lineLimit(20)
                 .padding(.bottom, 2)
-                .frame(maxWidth: .infinity, alignment: .center)
+                .frame(maxWidth: .infinity, alignment: .leading)
             HStack (spacing: 0){
                 Spacer()
                 Text(textTime)

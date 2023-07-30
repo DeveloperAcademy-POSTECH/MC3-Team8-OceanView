@@ -33,7 +33,8 @@ struct MainTabView: View {
                 .tag(0)
                 .toolbarBackground(Color("OnbardingBackgroundColor"), for: .tabBar)
             
-            ChatListView(mainModel: mainModel)
+            //ChatListView(mainModel: mainModel)
+            ChatListView(mainModel: mainModel, vm: vm)
                 .tabItem {
                     Image(selectedTab == 1 ? "IconTabChatA" : "IconTabChatB")
                     Text("채팅")
@@ -53,7 +54,6 @@ struct MainTabView: View {
             
             HeartView(mainModel: mainModel)
                 .tabItem {
-                    // IconTabHeartA
                     Image(selectedTab == 3 ? "IconTabHeartA" : "IconTabHeartB")
                     Text("하트")
                         .foregroundColor(selectedTab == 3 ? Color("Main01") : Color("GrayScale10"))

@@ -17,6 +17,7 @@ struct HomeMatchedView: View {
     var body: some View {
         ZStack {
             VStack (spacing: 16){
+                // 화면 중앙의 카드 뷰
                 roundedFixedSizeImageBox(imgaeTitle: "ImgMainCard", boxWidth: 361, boxHeight: 524)
                     .overlay(
                         VStack(alignment: .leading, spacing: 4){
@@ -35,11 +36,9 @@ struct HomeMatchedView: View {
                         }
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(16)
-                        
                     )
                 
-                Spacer()
-                
+                // 화면 하단의 버튼 뷰
                 makeShadowEffectRoundedRectangle(backgroundColor: "Main02-2") {
                     Button {
                         mainModel.updateIsParticipated()
@@ -47,10 +46,10 @@ struct HomeMatchedView: View {
                         Text(mainModel.userInformation?.isParticipated ?? false ? "매칭 진행 중..." : "새로운 우연 만나기")
                             .foregroundColor(Color("Point01"))
                             .font(.system(size: 20, weight: .bold))
+                            .padding(3.5)
                     }
                 }
                 .padding(.horizontal, 16)
-                .padding(.bottom, 16)
             } // VStack
             .padding(.top, 16)
             .onAppear {
