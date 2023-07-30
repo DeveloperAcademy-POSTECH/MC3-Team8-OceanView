@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CheckHeartView: View {
-    var number: Int = 1
+    var number: Int = 0
     @ObservedObject var mainModel: MainViewModel
     var body: some View {
         NavigationView {
