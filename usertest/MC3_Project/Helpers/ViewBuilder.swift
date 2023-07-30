@@ -18,21 +18,22 @@ func makeShadowEffectRoundedRectangle<Content: View>
             .padding(16)
             .frame(maxWidth: .infinity)
             .background(Color("GrayScale01"))
-            .cornerRadius(4)
-            .shadow(color: Color(.sRGBLinear, white: 1, opacity: 0), radius: 0)
-            .offset(x: 3, y: 3)
+            .cornerRadius(16)
+            //.shadow(color: Color(.sRGBLinear, white: 1, opacity: 0), radius: 0)
+            .offset(x: 2, y: 2)
+            .opacity(0.9)
         
         content()
             .padding(16)
             .frame(maxWidth: .infinity)
             .background(Color(backgroundColor))
-            .cornerRadius(4)
+            .cornerRadius(16)
             .overlay(
-                RoundedRectangle(cornerRadius: 13)
+                RoundedRectangle(cornerRadius: 16)
                     .stroke(Color.black, lineWidth: 4)
             )
-            .cornerRadius(10)
-            .shadow(color: Color(.sRGBLinear, white: 1, opacity: 0), radius: 0)
+            .cornerRadius(16)
+            //.shadow(color: Color(.sRGBLinear, white: 1, opacity: 0), radius: 0)
     }
 }
 
@@ -41,11 +42,40 @@ func makeShadowEffectRoundedRectangle<Content: View>
 // mission, 채팅방 이동을 그리기 위한 뷰빌더
 @ViewBuilder
 func makeShadowEffectRoundedRectangle2<Content: View>
+(backgroundColor: String, content: () -> Content) -> some View {
+    ZStack (alignment: .trailing){
+        content()
+            .padding(16)
+            .frame(maxWidth: .infinity)
+            .background(Color("GrayScale01"))
+            .cornerRadius(4)
+            .offset(x: 2, y: 2)
+            .opacity(0.9)
+        
+        content()
+            .padding(16)
+            .frame(maxWidth: .infinity)
+            .background(Color(backgroundColor))
+            .cornerRadius(4)
+            .overlay(
+                RoundedRectangle(cornerRadius: 4)
+                    .stroke(Color.black, lineWidth: 2)
+            )
+            .cornerRadius(4)
+    }
+}
+
+
+
+// content를 넣으면 cornerRadius를 지정할 수 있는 큰 그림자를 가진 뷰를 그려줌
+// mission, 채팅방 이동을 그리기 위한 뷰빌더
+@ViewBuilder
+func makeShadowEffectRoundedRectangle3<Content: View>
 (backgroundColor: String, cornerRadius: CGFloat, content: () -> Content) -> some View {
     ZStack (alignment: .trailing){
         content()
             .padding(6)
-            .frame(width: 96)
+            .frame(width: 96, height: 32)
             .background(Color("GrayScale01"))
             .cornerRadius(cornerRadius)
             .shadow(color: Color(.sRGBLinear, white: 1, opacity: 0), radius: 0)
@@ -53,12 +83,12 @@ func makeShadowEffectRoundedRectangle2<Content: View>
         
         content()
             .padding(6)
-            .frame(width: 96)
+            .frame(width: 96, height: 32)
             .background(Color(backgroundColor))
             .cornerRadius(cornerRadius)
             .overlay(
                 RoundedRectangle(cornerRadius: cornerRadius)
-                    .stroke(Color.black, lineWidth: 2)
+                    .stroke(Color.black, lineWidth: 1)
             )
         //.cornerRadius(cornerRadius)
             .shadow(color: Color(.sRGBLinear, white: 1, opacity: 0), radius: 0)
@@ -66,7 +96,53 @@ func makeShadowEffectRoundedRectangle2<Content: View>
 }
 
 
-// content에 동그라미 안에 들어갈 것을 넣으면, shadow효과를 주는 View를 반환해줌
+// 프로필 이미지를 만들어주는 ViewBuilder
+// 원의 선이 없고, shadow가 있는 viewbuilder
+@ViewBuilder
+func makeShadowEffectCircleProfile<Content: View>
+(ciecleSize: CGFloat, content: () -> Content) -> some View {
+    ZStack (alignment: .trailing){
+        Circle()
+            .frame(width: ciecleSize)
+            .foregroundColor(Color.black)
+            .offset(x: 0.5, y: 1.5)
+            .opacity(0.9)
+        
+        content()
+            .overlay(
+                Circle()
+                    .stroke(Color.black, lineWidth: 0)
+            )
+            .cornerRadius(50)
+            .shadow(color: Color(.sRGBLinear, white: 1, opacity: 0), radius: 0)
+            .frame(width: ciecleSize)
+    }
+}
+
+// 프로필 이미지를 만들어주는 ViewBuilder
+// 원의 선, shadow가 있는 viewbuilder
+@ViewBuilder
+func makeShadowEffectCircleProfile2<Content: View>
+(ciecleSize: CGFloat, content: () -> Content) -> some View {
+    ZStack (alignment: .trailing){
+        Circle()
+            .frame(width: ciecleSize)
+            .foregroundColor(Color.black)
+            .offset(x: 0.5, y: 1.5)
+            .opacity(0.9)
+        
+        content()
+            .overlay(
+                Circle()
+                    .stroke(Color.black, lineWidth: 2)
+            )
+            .cornerRadius(50)
+            .shadow(color: Color(.sRGBLinear, white: 1, opacity: 0), radius: 0)
+            .frame(width: ciecleSize)
+    }
+}
+
+// 동그란 버튼의 shadow를 만들어주는 ViewBuilder
 @ViewBuilder
 func makeShadowEffectCircle<Content: View>
 (ciecleSize: CGFloat, content: () -> Content) -> some View {
@@ -74,18 +150,20 @@ func makeShadowEffectCircle<Content: View>
         Circle()
             .frame(width: ciecleSize)
             .foregroundColor(Color.black)
-            .offset(x: 4, y: 4)
+            .offset(x: 3, y: 3)
+            .opacity(0.9)
         
         content()
             .overlay(
                 Circle()
-                    .stroke(Color.black, lineWidth: 6)
+                    .stroke(Color.black, lineWidth: 4)
             )
             .cornerRadius(50)
             .shadow(color: Color(.sRGBLinear, white: 1, opacity: 0), radius: 0)
             .frame(width: ciecleSize)
     }
 }
+
 
 
 // MARK: Shadow가 없는 Box
@@ -110,8 +188,6 @@ func roundedInfinityWidthBox<Content: View>
     //.padding(.horizontal, 16)
     //.padding(.vertical, 10)
 }
-
-
 
 // box의 width와 height를 조절할 수 있는 Box, content에는 Box안의 내용이 들어감
 @ViewBuilder
@@ -138,6 +214,32 @@ func roundedFixedSizeBox<Content: View>
 // box의 width와 height를 조절할 수 있는 Box, content에는 Box안의 내용이 들어감
 @ViewBuilder
 func roundedFixedSizeColorBox<Content: View>
+(boxWidth: CGFloat, boxHeight: CGFloat, boxBackgroundColor: Color, boxForegroundColor: Color, cornerRadius: CGFloat, strokeColor: Color, @ViewBuilder content: () -> Content) -> some View {
+    Rectangle()
+        .foregroundColor(boxForegroundColor)
+        .frame(width: boxWidth, height: boxHeight)
+        .background(boxBackgroundColor)
+        .cornerRadius(cornerRadius)
+        .overlay(
+            RoundedRectangle(cornerRadius: cornerRadius)
+                .inset(by: 1)
+                .stroke(strokeColor, lineWidth: 2)
+                .overlay {
+                    content()
+                        .font(.system(size: 20))
+                        .autocapitalization(.none)
+                        .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 6))
+                        .fontWeight(.bold)
+                }
+        )
+    //.padding(.horizontal, 16)
+    //.padding(.vertical, 10)
+}
+
+
+// box의 width와 height를 조절할 수 있는 Box, content에는 Box안의 내용이 들어감
+@ViewBuilder
+func roundedInfinityColorBox<Content: View>
 (boxHeight: CGFloat, boxBackgroundColor: Color, boxForegroundColor: Color, cornerRadius: CGFloat, strokeColor: Color, @ViewBuilder content: () -> Content) -> some View {
     Rectangle()
         .foregroundColor(boxForegroundColor)
@@ -172,15 +274,18 @@ func roundedFixedSizeImageBox
         Rectangle()
             .frame(width: boxWidth, height: boxHeight)
             .background(Color("GrayScale01"))
-            .cornerRadius(10)
-            .offset(x: 3, y: 3)
+            .cornerRadius(16)
+            .offset(x: 2, y: 2)
+            .opacity(0.9)
         
         Image(imgaeTitle)
+            .resizable()
+            .aspectRatio(contentMode: .fill)
             .frame(width: boxWidth, height: boxHeight)
-            .cornerRadius(10)
+            .cornerRadius(16)
             .overlay(
-                RoundedRectangle(cornerRadius: 13)
-                    .stroke(Color.black, lineWidth: 4)
+                RoundedRectangle(cornerRadius: 16)
+                    .stroke(Color.black, lineWidth: 2)
             )
     }
 }
@@ -192,17 +297,20 @@ func roundedFixedSizeImageBox
 func chatList
 (imageTitle: String, missionTitle: String, lastChat: String, timeInfo: String) -> some View {
     NavigationLink {
-        MessageView(mainModel: MainViewModel(), vm: ChaListViewModel())
+        // destination
+        //GroupChatView()
     } label: {
-        
-        makeShadowEffectRoundedRectangle (backgroundColor: "Main02-2") {
+        makeShadowEffectRoundedRectangle2 (backgroundColor: "GrayScale10") {
             HStack (alignment: .center, spacing: 0) {
+                // 가장 왼쪽의 하트 이미지
                 makeShadowEffectCircle(ciecleSize: 42) {
-                    Image("IconChatList")
+                    Image("Imgprofile")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(maxWidth: .infinity)
-                }.padding(.trailing, 10)
+                }
+                .padding(.trailing, 16)
+                
                 VStack (alignment: .leading,spacing: 0){
                     Text(missionTitle)
                         .foregroundColor(Color("GrayScale02"))
@@ -225,11 +333,10 @@ func chatList
                     .font(
                         Font.custom("Pretendard-Medium", size: 12)
                     )
-                //.padding(.horizontal, 15)
-            }
-        }
+            } // HStack
+        } // makeShadowEffectRoundedRectangle
         .padding(.horizontal, 16)
-        .padding(.vertical, 8)
+        .padding(.bottom, 0)
     }
 }
 
@@ -242,10 +349,12 @@ func chatBubble
     copyChatBoxView {
         VStack (alignment: .leading){
             Text(textString)
+                .multilineTextAlignment(.leading)
                 .foregroundColor(Color("GrayScale01"))
                 .font(.system(size: 14))
                 .lineLimit(20)
                 .padding(.bottom, 2)
+                .frame(maxWidth: .infinity, alignment: .center)
             HStack (spacing: 0){
                 Spacer()
                 Text(textTime)
@@ -256,6 +365,7 @@ func chatBubble
     }
 }
 
+
 // 채팅방의 버블 - 채팅방의 버블의 그림자를 주는 효과
 @ViewBuilder
 func copyChatBoxView<Content: View>
@@ -264,65 +374,50 @@ func copyChatBoxView<Content: View>
         content()
             .padding(16)
             .background(Color.black)
-            .cornerRadius(16)
-            .shadow(color: Color(.sRGBLinear, white: 1, opacity: 0), radius: 0)
+            .cornerRadius(4)
             .frame(width: UIScreen.main.bounds.width*0.67)
             .offset(x: 3, y: 3)
+            .opacity(0.9)
         
         content()
             .padding(16)
             .background(Color("GrayScale10"))
             .cornerRadius(4)
             .overlay(
-                RoundedRectangle(cornerRadius: 13)
+                RoundedRectangle(cornerRadius: 4)
                     .stroke(Color.black, lineWidth: 4)
             )
-            .cornerRadius(8)
-            .shadow(color: Color(.sRGBLinear, white: 1, opacity: 0), radius: 0)
+            .cornerRadius(4)
             .frame(width: UIScreen.main.bounds.width*0.67)
     }
 }
 
 
-@ViewBuilder
-func makeShadowEffectCircleProfile2<Content: View>
-(ciecleSize: CGFloat, content: () -> Content) -> some View {
-    ZStack (alignment: .trailing){
-        Circle()
-            .frame(width: ciecleSize)
-            .foregroundColor(Color.black)
-            .offset(x: 0.5, y: 1.5)
-            .opacity(0.9)
-        
-        content()
-            .overlay(
-                Circle()
-                    .stroke(Color.black, lineWidth: 2)
-            )
-            .cornerRadius(50)
-            .shadow(color: Color(.sRGBLinear, white: 1, opacity: 0), radius: 0)
-            .frame(width: ciecleSize)
-    }
-}
 
 
+// box의 width와 height를 조절할 수 있는 Box, content에는 Box안의 내용이 들어감
 @ViewBuilder
-func makeShadowEffectCircleProfile<Content: View>
-(ciecleSize: CGFloat, content: () -> Content) -> some View {
-    ZStack (alignment: .trailing){
-        Circle()
-            .frame(width: ciecleSize)
-            .foregroundColor(Color.black)
-            .offset(x: 0.5, y: 1.5)
-            .opacity(0.9)
-        
-        content()
-            .overlay(
-                Circle()
-                    .stroke(Color.black, lineWidth: 0)
-            )
-            .cornerRadius(50)
-            .shadow(color: Color(.sRGBLinear, white: 1, opacity: 0), radius: 0)
-            .frame(width: ciecleSize)
-    }
+func roundedFixedSizeColorBox<Content: View>
+(boxHeight: CGFloat, boxBackgroundColor: Color, boxForegroundColor: Color, cornerRadius: CGFloat, strokeColor: Color, @ViewBuilder content: () -> Content) -> some View {
+    Rectangle()
+        .foregroundColor(boxForegroundColor)
+        .frame(height: boxHeight)
+        .frame(maxWidth: .infinity)
+        .background(boxBackgroundColor)
+        .cornerRadius(cornerRadius)
+        .overlay(
+            RoundedRectangle(cornerRadius: cornerRadius)
+                .inset(by: 1)
+                .stroke(strokeColor, lineWidth: 2)
+                .overlay {
+                    content()
+                        .font(.system(size: 20))
+                        .autocapitalization(.none)
+                        .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 6))
+                        .fontWeight(.bold)
+                }
+        )
+    //.padding(.horizontal, 16)
+    //.padding(.vertical, 10)
 }
+

@@ -245,11 +245,11 @@
 		CA7D15892A6A916C00EFA1CC /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CA572B382A6F4E7400FD9334 /* ChatView */,
-				CAED964E2A6CE2FD00A2D77D /* MainView */,
 				CA7D158A2A6A917400EFA1CC /* AuthView */,
-				CA144B942A6D675800BB7D80 /* HeartView */,
+				CAED964E2A6CE2FD00A2D77D /* MainView */,
+				CA572B382A6F4E7400FD9334 /* ChatView */,
 				CA144B932A6D675300BB7D80 /* MissionView */,
+				CA144B942A6D675800BB7D80 /* HeartView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
