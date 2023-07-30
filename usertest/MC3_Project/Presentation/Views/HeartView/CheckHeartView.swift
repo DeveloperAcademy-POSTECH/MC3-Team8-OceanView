@@ -17,7 +17,7 @@ struct CheckHeartView: View {
                 
                 VStack(spacing: 0) {
                     // MARK: 화면 상단의 미션 게시판 헤더
-                    HeartHeaderView()
+                    HeartHeaderView(mainModel: mainModel)
                     
                     // MARK: 중앙의 미션 완료 or 연결된 하트 확인 카드
                     // TODO: 미션을 완료 했는지, 연결된 하트가 없는지, 하트가 연결이 완료되었는지에 따라 imageTitle, overlay의 imageTitle을 변경시켜줘야 함

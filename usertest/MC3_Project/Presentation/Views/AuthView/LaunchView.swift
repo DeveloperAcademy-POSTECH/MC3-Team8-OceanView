@@ -20,7 +20,6 @@ struct LaunchView: View {
                         .aspectRatio(contentMode: .fill)
                         .ignoresSafeArea()
         
-                
                     VStack{
                         Spacer()
                         

@@ -11,43 +11,58 @@ struct MainTabView: View {
     // MARK: - Properties
     @ObservedObject var mainModel: MainViewModel
     @ObservedObject var vm : ChaListViewModel
+    @State var selectedTab: Int = 0
+    
+//    init(mainModel: MainViewModel, vm: ChaListViewModel) {
+//        UITabBar.appearance().barTintColor = UIColor(Color("Main02-2"))
+//        self.mainModel = mainModel
+//        self.vm = vm
+//        //UITabBar.appearance().backgroundColor = UIColor.red
+//    }
+    
     // MARK: - Body
     var body: some View {
-    
-        TabView {
+        
+        TabView (selection: $selectedTab){
             MainView(mainModel: mainModel, vm: vm)
                 .tabItem {
-                    Image(systemName: "heart")
-                    Text("홈")
+                    Image(selectedTab == 0 ? "IconTabmatchA" : "IconTabmatchB")
+                    Text("매칭")
+                        .foregroundColor(selectedTab == 0 ? Color("Main01") : Color("GrayScale10"))
                 }
-                .tag(1)
+                .tag(0)
                 .toolbarBackground(Color("OnbardingBackgroundColor"), for: .tabBar)
             
             ChatListView(mainModel: mainModel)
                 .tabItem {
-                    Image(systemName: "heart")
-                    Text("채팅방")
+                    Image(selectedTab == 1 ? "IconTabChatA" : "IconTabChatB")
+                    Text("채팅")
+                        .foregroundColor(selectedTab == 1 ? Color("Main01") : Color("GrayScale10"))
                 }
-                .tag(2)
+                .tag(1)
                 .toolbarBackground(Color("OnbardingBackgroundColor"), for: .tabBar)
             
             MissionCertificationView(mainModel: mainModel, vm: vm)
                 .tabItem {
-                    Image(systemName: "heart")
-                    Text("미션게시판")
+                    Image(selectedTab == 2 ? "IconTabMissionA" : "IconTabMissionB")
+                    Text("미션")
+                        .foregroundColor(selectedTab == 2 ? Color("Main01") : Color("GrayScale10"))
                 }
-                .tag(3)
+                .tag(2)
                 .toolbarBackground(Color("OnbardingBackgroundColor"), for: .tabBar)
             
             HeartView(mainModel: mainModel)
                 .tabItem {
-                    Image(systemName: "heart")
+                    // IconTabHeartA
+                    Image(selectedTab == 3 ? "IconTabHeartA" : "IconTabHeartB")
                     Text("하트")
+                        .foregroundColor(selectedTab == 3 ? Color("Main01") : Color("GrayScale10"))
                 }
-                .tag(4)
+                .tag(3)
                 .toolbarBackground(Color("OnbardingBackgroundColor"), for: .tabBar)
-        }.accentColor(Color.Mytheme.heartColor)
-            .toolbarBackground(Color("OnbardingBackgroundColor"), for: .tabBar)
+        }
+        .accentColor(Color.Mytheme.heartColor)
+        .toolbarBackground(Color("OnbardingBackgroundColor"), for: .tabBar)
     }
 }
 
