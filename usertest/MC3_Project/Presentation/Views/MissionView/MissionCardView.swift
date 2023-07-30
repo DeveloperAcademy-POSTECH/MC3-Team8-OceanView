@@ -16,20 +16,25 @@ struct MissionCardView: View {
     var body: some View {
         ZStack {
             Image("ImgMissionCardBack1")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 360)
             
-            roundedFixedSizeImageBox(imgaeTitle: "ImgMissionCerti", boxWidth: 342, boxHeight: 342)
+            roundedFixedSizeImageBox(imgaeTitle: "ImgMissionCerti", boxWidth: 332, boxHeight: 332)
             
             makeShadowEffectRoundedRectangle (backgroundColor: "GrayScale10") {
                 HStack (spacing: 0) {
                     VStack (alignment: .leading, spacing: 4) {
                         Text(missionTitle)
                             .font(.system(size: 16, weight: .bold))
+                            .lineLimit(1)
                         Text(missionDate)
                             .font(.system(size: 12))
+                            .foregroundColor(Color("GrayScale04"))
                     } // VStack
                     Spacer()
                     Divider()
-                        .frame(minWidth: 3)
+                        .frame(minWidth: 2)
                         .background(Color.black)
                         .frame(height: 30)
                     
@@ -45,12 +50,11 @@ struct MissionCardView: View {
                                 .font(.system(size: 14))
                                 .foregroundColor(Color("GrayScale03"))
                         }
-                        .padding(10)
-                    }
+                    } // Button
                 } // HStack
             }
             .frame(width: 310)
-            .offset(x: 0, y: 160)
+            .offset(x: 0, y: 175)
         } // ZStack
     }
 }

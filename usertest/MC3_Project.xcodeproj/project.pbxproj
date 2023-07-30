@@ -130,8 +130,8 @@
 		CA144B932A6D675300BB7D80 /* MissionView */ = {
 			isa = PBXGroup;
 			children = (
-				CA144B9B2A6D678600BB7D80 /* MissionCardView.swift */,
 				CA144B9D2A6D678600BB7D80 /* MissionCertificationView.swift */,
+				CA144B9B2A6D678600BB7D80 /* MissionCardView.swift */,
 				CA144B9C2A6D678600BB7D80 /* UploadPhotoView.swift */,
 			);
 			path = MissionView;
