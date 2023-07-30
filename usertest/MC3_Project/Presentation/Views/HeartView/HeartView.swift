@@ -16,7 +16,7 @@ struct HeartView: View {
             VStack {
                 if mainModel.isMission == false {
                     
-                    HeartHeaderView()
+                    HeartHeaderView(mainModel: mainModel)
                     
                     roundedFixedSizeImageBox(imgaeTitle: "ImgHeartCard1", boxWidth: 361, boxHeight: 500)
                         .overlay(Image("ImgHeartBubble1").offset(y: 250))

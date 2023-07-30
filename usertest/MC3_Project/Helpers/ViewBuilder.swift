@@ -284,6 +284,32 @@ func copyChatBoxView<Content: View>
 }
 
 
+
+// 프로필 이미지를 만들어주는 ViewBuilder
+// 원의 선이 없고, shadow가 있는 viewbuilder
+@ViewBuilder
+func makeShadowEffectCircleProfile<Content: View>
+(ciecleSize: CGFloat, content: () -> Content) -> some View {
+    ZStack (alignment: .trailing){
+        Circle()
+            .frame(width: ciecleSize)
+            .foregroundColor(Color.black)
+            .offset(x: 0.5, y: 1.5)
+            .opacity(0.9)
+        
+        content()
+            .overlay(
+                Circle()
+                    .stroke(Color.black, lineWidth: 0)
+            )
+            .cornerRadius(50)
+            .shadow(color: Color(.sRGBLinear, white: 1, opacity: 0), radius: 0)
+            .frame(width: ciecleSize)
+    }
+}
+
+// 프로필 이미지를 만들어주는 ViewBuilder
+// 원의 선, shadow가 있는 viewbuilder
 @ViewBuilder
 func makeShadowEffectCircleProfile2<Content: View>
 (ciecleSize: CGFloat, content: () -> Content) -> some View {
@@ -306,23 +332,3 @@ func makeShadowEffectCircleProfile2<Content: View>
 }
 
 
-@ViewBuilder
-func makeShadowEffectCircleProfile<Content: View>
-(ciecleSize: CGFloat, content: () -> Content) -> some View {
-    ZStack (alignment: .trailing){
-        Circle()
-            .frame(width: ciecleSize)
-            .foregroundColor(Color.black)
-            .offset(x: 0.5, y: 1.5)
-            .opacity(0.9)
-        
-        content()
-            .overlay(
-                Circle()
-                    .stroke(Color.black, lineWidth: 0)
-            )
-            .cornerRadius(50)
-            .shadow(color: Color(.sRGBLinear, white: 1, opacity: 0), radius: 0)
-            .frame(width: ciecleSize)
-    }
-}

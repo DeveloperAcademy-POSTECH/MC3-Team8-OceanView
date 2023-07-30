@@ -24,7 +24,7 @@ struct SendHeartView: View {
         ZStack {
             Color.Mytheme.onbardingBackgroundColor.ignoresSafeArea()
             VStack {
-                HeartHeaderView()
+                HeartHeaderView(mainModel: mainModel)
                 
                 GeometryReader { geo in
                     let adjustmentWidth = (totalSpacing / 2) - sideSpacing
