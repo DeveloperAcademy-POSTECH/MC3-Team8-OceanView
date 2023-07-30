@@ -30,7 +30,7 @@ struct LoginView: View {
                 .padding(.top, 63)
                 
                 // 이메일 입력란
-                roundedFixedSizeColorBox(boxHeight: 52, boxBackgroundColor: .white, boxForegroundColor: .clear, cornerRadius: 10, strokeColor: Color(hex: "5A66D6")) {
+                roundedInfinityColorBox(boxHeight: 52, boxBackgroundColor: .white, boxForegroundColor: .clear, cornerRadius: 10, strokeColor: Color(hex: "5A66D6")) {
                     TextField("", text: $viewModel.loginEmail)
                         .keyboardType(.emailAddress)
                         .placeholder(when: viewModel.loginEmail.isEmpty, placeholder: {
@@ -42,7 +42,7 @@ struct LoginView: View {
                 .padding(.top, 16)
                 
                 // 비밀번호 입력란
-                roundedFixedSizeColorBox( boxHeight: 52, boxBackgroundColor: .white, boxForegroundColor: .clear, cornerRadius: 10, strokeColor: Color(hex: "5A66D6")) {
+                roundedInfinityColorBox(boxHeight: 52, boxBackgroundColor: .white, boxForegroundColor: .clear, cornerRadius: 10, strokeColor: Color(hex: "5A66D6")) {
                     SecureField("", text: $viewModel.loginPassword)
                         .keyboardType(.emailAddress)
                         .placeholder(when: viewModel.loginPassword.isEmpty, placeholder: {

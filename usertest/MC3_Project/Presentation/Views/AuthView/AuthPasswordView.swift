@@ -28,7 +28,7 @@ struct AuthPasswordView: View {
                 .padding(.top, 63)
                 
                 //패스워드
-                roundedFixedSizeColorBox(boxHeight: 52, boxBackgroundColor: .white, boxForegroundColor: .clear, cornerRadius: 10, strokeColor: Color(hex: "5A66D6")) {
+                roundedInfinityColorBox(boxHeight: 52, boxBackgroundColor: .white, boxForegroundColor: .clear, cornerRadius: 10, strokeColor: Color(hex: "5A66D6")) {
                     
                     SecureField("", text: $viewModel.textPassword)
                         .placeholder(when: viewModel.textPassword.isEmpty, placeholder: {
@@ -91,9 +91,6 @@ struct AuthPasswordView: View {
                 }
                 .padding(.bottom, 71)
                 .disabled(!viewModel.isPasswordValid || !(viewModel.textPassword == viewModel.textPasswordChecked))
-
-                
-               
             }.padding(.horizontal, 16)
         }
         .navigationBarBackButtonHidden()
